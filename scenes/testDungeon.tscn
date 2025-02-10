@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb8yybunl61et"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_a5etq"]
+[ext_resource type="MeshLibrary" uid="uid://j2was1ytc0wj" path="res://tileset.tres" id="2_jddph"]
+[ext_resource type="Texture2D" uid="uid://b4x8jwebo54pi" path="res://textures/e1924d3fb9bc39c81cad8a8165863db0.jpg" id="3_h3yvl"]
+[ext_resource type="PackedScene" uid="uid://tacskbkiwcby" path="res://chest_zone.tscn" id="4_fpbay"]
+
+[sub_resource type="Environment" id="Environment_by75w"]
+background_mode = 1
+background_color = Color(0.0980392, 0.14902, 0.168627, 1)
+background_energy_multiplier = 2.37
+ambient_light_color = Color(0.47451, 0.0901961, 0.12549, 1)
+fog_enabled = true
+fog_light_color = Color(0.152941, 0.25098, 0.564706, 1)
+fog_light_energy = 1.42
+fog_density = 0.0232
+volumetric_fog_enabled = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_h0nyj"]
+
+[node name="TestDungeon" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_by75w")
+
+[node name="Character" parent="." instance=ExtResource("1_a5etq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34579, 0.256798, 2.48095)
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh_library = ExtResource("2_jddph")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 65535, 2, 0, 65535, 2, 65534, 65535, 2, 0, 1, 655362, 65535, 1, 655362, 65534, 1, 2, 1, 65535, 2, 1, 0, 2, 1, 65534, 2, 2, 1, 1441792, 2, 0, 1441792, 2, 65535, 1441792, 2, 65534, 1441792, 1, 65533, 0, 0, 65533, 0, 65535, 65533, 0, 65533, 65534, 1048576, 65533, 65535, 1048576, 65533, 0, 1048576, 65533, 1, 1048576, 1, 2, 655360, 65534, 65533, 0, 2, 65533, 1, 65533, 65533, 1048577, 65533, 2, 655361, 65534, 2, 655363, 65534, 0, 2, 65535, 0, 655362, 0, 0, 2, 1, 1, 2, 2, 2, 1441793, 65534, 3, 1048576, 65534, 4, 1048576, 65534, 5, 1048576, 65534, 6, 1048576, 65535, 3, 655362, 65535, 4, 655362, 65535, 5, 655362, 65535, 6, 655362, 0, 6, 1441792, 0, 5, 1441792, 0, 4, 1441792, 0, 3, 1441792, 0, 2, 1441795, 65535, 2, 655362, 65534, 65534, 2, 65535, 65534, 2, 0, 65534, 2)
+}
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104945, 0.716419, 9.05849)
+mesh = SubResource("PrismMesh_h0nyj")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.194634, 1.62149, -1.58353)
+light_energy = 16.0
+light_volumetric_fog_energy = 1.6
+light_projector = ExtResource("3_h3yvl")
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 5.56436
+spot_angle = 38.8857
+
+[node name="chest_zone" parent="." instance=ExtResource("4_fpbay")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 13.4759)

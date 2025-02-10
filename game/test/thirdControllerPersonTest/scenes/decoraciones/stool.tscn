@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=4 uid="uid://drsh0n5s320xc"]
+
+[ext_resource type="Texture2D" uid="uid://c622qnwki55r6" path="res://game/test/thirdControllerPersonTest/scenes/decoraciones/textures/stool_stool_albedo.png" id="1_svghi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p0byh"]
+friction = 0.11
+bounce = 0.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5nvp"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_svghi")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_56l07"]
+_surfaces = [{
+"aabb": AABB(-0.2, 0, -0.222788, 0.4, 0.45, 0.445576),
+"format": 34896613377,
+"index_count": 204,
+"index_data": PackedByteArray("BAABAAcABAAAAAEAAgAGAAMAAgAFAAYABQAHAAYABQAEAAcACAALAAkACAAKAAsACgAPAAsACgAOAA8ADgANAA8ADgAMAA0ADAAJAA0ADAAIAAkACgAMAA4ACgAIAAwAEAATABEAEAASABMAEgAXABMAEgAWABcAFgAVABcAFgAUABUAFAARABUAFAAQABEAEgAUABYAEgAQABQAHAAZAB8AHAAYABkAGgAeABsAGgAdAB4AHQAfAB4AHQAcAB8AIAAjACEAIAAiACMAIgAnACMAIgAmACcAJgAlACcAJgAkACUAJAAhACUAJAAgACEAIgAkACYAIgAgACQAKAArACkAKAAqACsAKgAvACsAKgAuAC8ALgAtAC8ALgAsAC0ALAApAC0ALAAoACkAKgAsAC4AKgAoACwAAgAbABoAAgADABsAAQAYABkAAQAAABgABwAZAB8ABwABABkABgAfAB4ABgAHAB8AAwAeABsAAwAGAB4ABAAdABwABAAFAB0AAAAcABgAAAAEABwABQAaAB0ABQACABoA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AADtzzfPAAAAAP//N88AAP//7c83zwAA/////zfPAABVVe3P//8AAKqq7c///wAAqqr/////AABVVf////8AAKu9AADl0gAACLWN46baAACrvQAAGbYAAAi1jeNYrgAAv90AAOXSAABi5o3jptoAAL/dAAAZtgAAYuaN41iuAACnIwAAXLcAAAQbjeObrwAAu0MAAFy3AABeTI3jm68AAKcjAAAo1AAABBuN4+nbAAC7QwAAKNQAAF5MjePp2wAAAADtz8cwAAAAAP//xzAAAP//7c/HMAAA/////8cwAABVVe3PAAAAAKqq7c8AAAAAqqr//wAAAABVVf//AAAAAKu9AAAZLQAACLWN41glAACrvQAA5UkAAAi1jeOmUQAAv90AABktAABi5o3jWCUAAL/dAADlSQAAYuaN46ZRAACnIwAAokgAAAQbjeNjUAAAu0MAAKJIAABeTI3jY1AAAKcjAADWKwAABBuN4xUkAAC7QwAA1isAAF5MjeMVJAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ptain"]
+resource_name = "stool_Cube_003"
+_surfaces = [{
+"aabb": AABB(-0.2, 0, -0.222788, 0.4, 0.45, 0.445576),
+"attribute_data": PackedByteArray("6sFzg+rBc4MkiK3o6sFBkOrBQZAkiK3oKLmt6LiQc4O4kHODKLmt6LiQQZC4kEGQnbBzg3uYFPfRqBT3BaJzg9GoFPcFokGQnbBBkHuYFPcgwNz/Hojwlrza///LvTKgD92joMnI3P8eiIymvNr//x7LMqAP3aOgZpPwlhrS//8gwNz/x8+joMu9MqBmk4ymGtL//8nI3P/Hz6OgHssyoMnI3P8eiPCWGtL//x7LMqDHz6OgHoiMprza///JyNz/D92joB7LMqAgwNz/ZpPwlhrS///LvTKgx8+joGaTjKa82v//IMDc/w/do6DLvTKgGeBzgySI57kZ4HODGeBBkCSI57kZ4EGQiXJzgyi557mJcnODiXJBkCi557mJckGQe5iAq2bxc4M8YXOD//9zg9GogKs8YUGQ//9BkNGogKt7mICrZvFBkLza//8eiPCWycjc/w/do6AeyzKgvNr//x6IjKYgwNz/D92joMu9MqDJyNz/GtL//2aT8JYeyzKgx8+joCDA3P8a0v//ZpOMpsu9MqDHz6OgGtL//x6I8JYgwNz/x8+joMu9MqAgwNz/vNr//x6IjKbLvTKgD92joBrS//9mk/CWycjc/8fPo6AeyzKgycjc/7za//9mk4ymHssyoA/do6A="),
+"format": 34896613399,
+"index_count": 204,
+"index_data": PackedByteArray("DAAEABIADAABAAQABwARAAoABwAPABEADwASABEADwAMABIAFAAcABcAFAAZABwAGwAmAB0AGwAkACYAJQAiACcAJQAgACIAHwAYACEAHwAWABgAGgAeACMAGgAVAB4AKgAwACwAKgAuADAALwA7ADEALwA5ADsAOAA2ADoAOAA0ADYAMgArADUAMgAoACsALQAzADcALQApADMASQBBAFEASQA+AEEAQgBNAEUAQgBKAE0ASwBRAE4ASwBJAFEAVABbAFYAVABZAFsAVwBlAFoAVwBiAGUAYQBfAGQAYQBcAF8AXQBVAGAAXQBSAFUAWABeAGMAWABTAF4AZgBvAGkAZgBsAG8AawB4AG4AawB1AHgAdgBzAHkAdgBwAHMAcgBqAHQAcgBoAGoAbQBxAHcAbQBnAHEACABHAEQACAALAEcAAwA8AD8AAwAAADwAEwBAAFAAEwAFAEAAEABQAE8AEAATAFAACQBPAEYACQAQAE8ADQBMAEgADQAOAEwAAgBIAD0AAgANAEgADgBDAEwADgAGAEMA"),
+"material": SubResource("StandardMaterial3D_h5nvp"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(2.5796, 1.8636, 0, 0),
+"vertex_count": 122,
+"vertex_data": PackedByteArray("AADtzzfP//8AAO3PN8///wAA7c83z/8/AAD//zfP//8AAP//N8///wAA//83z/+////tzzfP/z///+3PN8//////7c83z////////zfP/7//////N8////////83z///VVXtz/////9VVe3P////P6qq7c////8/qqrtz/////+qqv//////v6qq////////VVX///////9VVf//////v6u9AADl0vgAq70AAOXS/7+rvQAA5dIAAAi1jeOm2vgACLWN46baAACrvQAAGbb4AKu9AAAZtv+/q70AABm2//8ItY3jWK74AAi1jeNYrv//v90AAOXS/7+/3QAA5dIAAL/dAADl0gLAYuaN46baAABi5o3jptoCwL/dAAAZtv+/v90AABm2//+/3QAAGbYCwGLmjeNYrv//YuaN41iuAsCnIwAAXLf4AKcjAABct1TVpyMAAFy3XwEEG43jm6/4AAQbjeObr18Bu0MAAFy3VNW7QwAAXLdfAbtDAABctwLAXkyN45uvXwFeTI3jm68CwKcjAAAo1PgApyMAACjUVNWnIwAAKNRfgQQbjePp2/gABBuN4+nbX4G7QwAAKNRU1btDAAAo1F+Bu0MAACjUAsBeTI3j6dtfgV5MjePp2wLAAADtz8cw//8AAO3PxzD/PwAA7c/HMOVoAAD//8cw//8AAP//xzD/vwAA///HMOVo///tz8cw5Wj//+3PxzD/P///7c/HMP///////8cw5Wj/////xzD/v//////HMP//VVXtzwAA/z9VVe3PAABydKqq7c8AAHJ0qqrtzwAAcnSqqu3PAAD/P6qq//8AAHJ0qqr//wAAcnSqqv//AAD/v1VV//8AAP+/VVX//wAAcnSrvQAAGS0AAKu9AAAZLf+/q70AABktAsAItY3jWCUAAAi1jeNYJQLAq70AAOVJ//+rvQAA5Un/v6u9AADlSQLACLWN46ZR//8ItY3jplECwL/dAAAZLfgAv90AABktAAC/3QAAGS3/v2LmjeNYJfgAYuaN41glAAC/3QAA5Un4AL/dAADlSf//v90AAOVJ/79i5o3jplH4AGLmjeOmUf//pyMAAKJIXwGnIwAAokhU1acjAACiSALABBuN42NQXwEEG43jY1ACwLtDAACiSPgAu0MAAKJIXwG7QwAAokhU1V5MjeNjUPgAXkyN42NQXwGnIwAA1itfgacjAADWK1TVpyMAANYrAsAEG43jFSRfgQQbjeMVJALAu0MAANYr+AC7QwAA1itfgbtDAADWK1TVXkyN4xUk+ABeTI3jFSRfgf8//38eY/9/AAD/f/8//38eY/9//v//fwAA/3/gnP9//7//f////3/gnP9//7//fwNw/38AAP9/AAD/f/uP/3/+//9/+4//fwNw/3////9/iEDtfgAA/3//f+B9iEDtfv9/4H2IQO1+AAD/fx6C//+IQO1+HoL//wAA/3//f+B96H0tBP9/4H3ofS0EAAD/fx6C///ofS0EHoL//+h9LQSIQO1+qipU1QAA/3+IQO1+AAD/f6oqVNUAAP9/6H0tBAAA/3/ofS0EiEDtfqoqVNUAAP9/iEDtfgAA/3+qKlTVAAD/f+h9LQQAAP9/6H0tBP8//38AAP9//38AAP8//3/+//9//38AAP9///8AAP9//7//f/9////+//9//7//fwAA/3//fwAA/3////9//v8AAP9//3////9//v/+//9//v//f/9/AAD/fx6C////fyyEFgL/fx6CLIQWAv9/3/3///9/LIQWAv9/3/0shBYC7P52P/9/HoL///9/7P52P/9/HoLs/nY//3/f/f///3/s/nY//3/f/f///39U1aoqLIQWAv///38shBYC7P52P////39U1aoq7P52P////3////9/VNWqKiyEFgL///9/LIQWAuz+dj////9/VNWqKuz+dj////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_56l07")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24fhd"]
+size = Vector3(0.4, 0.46, 0.45)
+
+[node name="stool" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_p0byh")
+gravity_scale = 0.256
+
+[node name="stool" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_ptain")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.228116, 0)
+shape = SubResource("BoxShape3D_24fhd")
