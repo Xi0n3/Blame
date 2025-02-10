@@ -18,7 +18,6 @@ signal sprinting_changed(is_sprinting)
 
 #Podemos agregar una linea como la de abajo para instanciar un nodo de la escena
 #en una variable, simplemente arrastrando el nodo al código mientras mantenemos CTRL
-@onready var camera_mount = $camRoot
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
 var rotation_direction: float
@@ -111,4 +110,4 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if !is_locked:
-		move_and_slide()
+		move_and_slide() 
