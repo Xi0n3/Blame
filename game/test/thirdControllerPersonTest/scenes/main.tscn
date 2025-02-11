@@ -95,7 +95,7 @@ use_collision = true
 size = Vector3(3, 3, 3)
 
 [node name="Player" parent="." instance=ExtResource("5_j6r3c")]
-transform = Transform3D(-0.775562, 0, -0.631272, 0, 1, 0, 0.631272, 0, -0.775562, 6, 1, -2)
+transform = Transform3D(-0.775562, 0, -0.631272, 0, 1, 0, 0.631272, 0, -0.775562, 3.5844, 0.635107, 0.878915)
 
 [node name="decoraciones" type="Node3D" parent="."]
 

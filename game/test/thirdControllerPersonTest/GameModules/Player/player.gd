@@ -1,3 +1,6 @@
+#Este código necesita migrar sus animaciones a un Animation Controller, 
+#y un Input Controller, ademas de ser más modular, pero todo a su tiempo
+
 extends CharacterBody3D
 #Señales
 signal sprinting_changed(is_sprinting)
@@ -51,20 +54,18 @@ func _process(delta):
 func _physics_process(delta):
 	#Manda una señal a View para el fov de la camara
 	sprinting_changed.emit(false)
-	if InputEventJoypadMotion:  # Control
-		walking_mode=false
 		
-	if animation_player.current_animation == "kick":
+	if animation_player.current_animation == "Movement/sword_slash_1":
 		var progress = animation_player.current_animation_position / animation_player.current_animation_length
-		if progress >= 0.5:
+		if progress >= 0.65:
 			is_locked = false  # Desbloquea el movimiento cuando la animación llega al 30%
 			 
-	if !animation_player.is_playing() and animation_player.current_animation != "kick":
+	if !animation_player.is_playing() and animation_player.current_animation != "Movement/sword_slash_1":
 		is_locked = false  # Desbloquea completamente cuando la animación termina
 		
 	if Input.is_action_just_pressed("attack"):
-		if animation_player.current_animation != "kick":
-			animation_player.play("kick", -1, 1.5)
+		if animation_player.current_animation != "Movement/sword_slash_1":
+			animation_player.play("Movement/sword_slash_1", -1, 1.4)
 			is_locked = true
 		
 	else:
@@ -87,25 +88,25 @@ func _physics_process(delta):
 		if !is_locked:
 			if  (!walking_mode && (abs(input_dir.x) + abs(input_dir.y))>controller_value_stick_to_start_run):
 				if Input.is_action_pressed("sprint"):
-					if animation_player.current_animation != "running":
-						animation_player.play("running", -1, 1.5)
+					if animation_player.current_animation != "Movement/fast_run":
+						animation_player.play("Movement/fast_run")
 					SPEED = sprint_speed
 					sprinting_changed.emit(true) 
 				else:
-					if animation_player.current_animation != "running":
-						animation_player.play("running")
+					if animation_player.current_animation != "Movement/run":
+						animation_player.play("Movement/run")
 					SPEED = running_speed
 					running = true
 			else:
-				if animation_player.current_animation != "walking":
-					animation_player.play("walking")
+				if animation_player.current_animation != "Movement/walk":
+					animation_player.play("Movement/walk")
 			visuals.look_at(position + direction)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
 		if !is_locked:
-			if animation_player.current_animation != "idle":
-				animation_player.play("idle")
+			if animation_player.current_animation != "Movement/idle":
+				animation_player.play("Movement/idle")
 		
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
