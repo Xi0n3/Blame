@@ -1,15 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0ca0kn24curg"]
+[gd_scene load_steps=15 format=3 uid="uid://bs3bdxdh1x5gw"]
 
-[ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/player.gd" id="1_8rgu7"]
-[ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/view.gd" id="2_0y2m0"]
-[ext_resource type="PackedScene" uid="uid://ctbwrka5haane" path="res://game/player/player_model.tscn" id="2_oxgld"]
-[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://game/test/thirdControllerPersonTest/scenes/system/user_interface.tscn" id="3_thab2"]
-[ext_resource type="Animation" uid="uid://ksayglfdvjlw" path="res://game/player/animations/src/fast_run.res" id="5_8qc4d"]
-[ext_resource type="Animation" uid="uid://b2v8aglpnkqkg" path="res://game/player/animations/src/walk.res" id="6_5yot8"]
-[ext_resource type="Animation" uid="uid://k5khsmj8yli8" path="res://game/player/animations/src/idle.res" id="7_5hxn5"]
-[ext_resource type="Animation" uid="uid://dcin2lthroo2p" path="res://game/player/animations/src/run.res" id="8_uly33"]
-[ext_resource type="Animation" uid="uid://cbcnafipqyeva" path="res://game/player/animations/src/run_with_sword.res" id="9_lh13j"]
-[ext_resource type="Animation" uid="uid://bb1opo4wlfef3" path="res://game/player/animations/src/sword_slash_1.res" id="10_ceduw"]
+[ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/player.gd" id="1_5xpgp"]
+[ext_resource type="PackedScene" uid="uid://ctbwrka5haane" path="res://game/player/player_model.tscn" id="2_3spuy"]
+[ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/view.gd" id="3_51lh1"]
+[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://game/test/thirdControllerPersonTest/scenes/system/user_interface.tscn" id="4_y1un5"]
+[ext_resource type="Animation" uid="uid://ksayglfdvjlw" path="res://game/player/animations/src/fast_run.res" id="5_ja1ir"]
+[ext_resource type="Animation" uid="uid://k5khsmj8yli8" path="res://game/player/animations/src/idle.res" id="6_q26fi"]
+[ext_resource type="Animation" uid="uid://dcin2lthroo2p" path="res://game/player/animations/src/run.res" id="7_47qyk"]
+[ext_resource type="Animation" uid="uid://cbcnafipqyeva" path="res://game/player/animations/src/run_with_sword.res" id="8_bn8hf"]
+[ext_resource type="Animation" uid="uid://bb1opo4wlfef3" path="res://game/player/animations/src/sword_slash_1.res" id="9_vjunk"]
+[ext_resource type="Animation" uid="uid://b2v8aglpnkqkg" path="res://game/player/animations/src/walk.res" id="10_tldut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wole8"]
 radius = 0.25262
@@ -22,16 +22,16 @@ radius = 0.07
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bpseb"]
 _data = {
-"fast_run": ExtResource("5_8qc4d"),
-"idle": ExtResource("7_5hxn5"),
-"run": ExtResource("8_uly33"),
-"run_with_sword": ExtResource("9_lh13j"),
-"sword_slash_1": ExtResource("10_ceduw"),
-"walk": ExtResource("6_5yot8")
+"fast_run": ExtResource("5_ja1ir"),
+"idle": ExtResource("6_q26fi"),
+"run": ExtResource("7_47qyk"),
+"run_with_sword": ExtResource("8_bn8hf"),
+"sword_slash_1": ExtResource("9_vjunk"),
+"walk": ExtResource("10_tldut")
 }
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("view")]
-script = ExtResource("1_8rgu7")
+script = ExtResource("1_5xpgp")
 view = NodePath("View")
 controller_value_stick_to_start_run = 0.8
 
@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-06, 0.00544906, 5.1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0790607, 0.276245, -0.0280719)
-light_color = Color(0, 0.853884, 0.914346, 1)
+light_color = Color(1, 0.679893, 0.194275, 1)
 omni_range = 3.163
 omni_attenuation = 0.420448
 
@@ -54,12 +54,12 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 
 [node name="Armature" type="Node3D" parent="visuals/mixamo_base"]
 transform = Transform3D(0.89, 0, 0, 0, -3.89031e-08, -0.89, 0, 0.89, -3.89031e-08, 0, 0, 0)
 
-[node name="playerP" parent="visuals/mixamo_base/Armature" instance=ExtResource("2_oxgld")]
+[node name="playerP" parent="visuals/mixamo_base/Armature" instance=ExtResource("2_3spuy")]
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
 
 [node name="View" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3147, 0)
-script = ExtResource("2_0y2m0")
+script = ExtResource("3_51lh1")
 controller_camera_sens_horizontal = 0.05
 controller_camera_sens_vertical = -0.05
 sprint_fov = 100
@@ -74,7 +74,7 @@ spring_length = 2.0
 transform = Transform3D(1, 0, 0, 0, 0.987223, 0.159347, 0, -0.159347, 0.987223, 0, 0.606042, 2.17217)
 current = true
 
-[node name="fpsCount" parent="." instance=ExtResource("3_thab2")]
+[node name="fpsCount" parent="." instance=ExtResource("4_y1un5")]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_ye53c")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=25 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/test/thirdControllerPersonTest/textures/grids/Dark/texture_05.png" id="1_j15he"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/test/thirdControllerPersonTest/textures/grids/Orange/texture_09.png" id="2_26ydl"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://game/test/thirdControllerPersonTest/textures/grids/Purple/texture_09.png" id="3_ik0bg"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://game/test/thirdControllerPersonTest/textures/grids/Green/texture_09.png" id="4_6nugu"]
 [ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://game/test/thirdControllerPersonTest/GameModules/Player/player.tscn" id="5_j6r3c"]
+[ext_resource type="PackedScene" uid="uid://bs3bdxdh1x5gw" path="res://game/test/thirdControllerPersonTest/GameModules/Player/player2.tscn" id="6_u2eyx"]
 [ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/test/thirdControllerPersonTest/scenes/decoraciones/table.tscn" id="9_w3a5e"]
 [ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/test/thirdControllerPersonTest/scenes/decoraciones/tall_stool.tscn" id="11_ecvso"]
 [ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/test/thirdControllerPersonTest/scenes/decoraciones/chair.tscn" id="12_1r8gu"]
@@ -93,9 +94,6 @@ transform = Transform3D(0.959186, 0, 0.282777, 0, 1, 0, -0.282777, 0, 0.959186, 
 material_override = SubResource("StandardMaterial3D_oi22d")
 use_collision = true
 size = Vector3(3, 3, 3)
-
-[node name="Player" parent="." instance=ExtResource("5_j6r3c")]
-transform = Transform3D(-0.775562, 0, -0.631272, 0, 1, 0, 0.631272, 0, -0.775562, 3.5844, 0.635107, 0.878915)
 
 [node name="decoraciones" type="Node3D" parent="."]
 
@@ -194,3 +192,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55375, 0.5, -4.41831)
 
 [node name="TestDungeon" parent="." instance=ExtResource("16_u2pwe")]
 transform = Transform3D(0.842283, 0, -0.539035, 0, 1, 0, 0.539035, 0, 0.842283, 0, 0.488828, -19.687)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
+size = Vector2i(1280, 358)
+
+[node name="Player" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("5_j6r3c")]
+transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 13.8801, 0.603868, -9.88386)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(1280, 358)
+render_target_update_mode = 4
+
+[node name="Player2" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("6_u2eyx")]
+transform = Transform3D(-0.95367, 0, 0.300856, 0, 1, 0, -0.300856, 0, -0.95367, 5.66783, 0.5, -2.50862)
