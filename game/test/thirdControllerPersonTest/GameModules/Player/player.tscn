@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0ca0kn24curg"]
+[gd_scene load_steps=18 format=3 uid="uid://c0ca0kn24curg"]
 
 [ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/player.gd" id="1_8rgu7"]
 [ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/view.gd" id="2_0y2m0"]
@@ -10,6 +10,9 @@
 [ext_resource type="Animation" uid="uid://dcin2lthroo2p" path="res://game/player/animations/src/run.res" id="8_uly33"]
 [ext_resource type="Animation" uid="uid://cbcnafipqyeva" path="res://game/player/animations/src/run_with_sword.res" id="9_lh13j"]
 [ext_resource type="Animation" uid="uid://bb1opo4wlfef3" path="res://game/player/animations/src/sword_slash_1.res" id="10_ceduw"]
+[ext_resource type="Script" path="res://game/test/thirdControllerPersonTest/GameModules/Player/movement_controller.gd" id="11_a6v0s"]
+[ext_resource type="Animation" uid="uid://pff5tjhv2cby" path="res://game/player/animations/src/fall.res" id="12_luye5"]
+[ext_resource type="Animation" uid="uid://wi2q4qtol83g" path="res://game/player/animations/src/fall_forward_death.res" id="13_g44cf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wole8"]
 radius = 0.25262
@@ -22,6 +25,8 @@ radius = 0.07
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bpseb"]
 _data = {
+"fall": ExtResource("12_luye5"),
+"fall_forward_death": ExtResource("13_g44cf"),
 "fast_run": ExtResource("5_8qc4d"),
 "idle": ExtResource("7_5hxn5"),
 "run": ExtResource("8_uly33"),
@@ -30,10 +35,12 @@ _data = {
 "walk": ExtResource("6_5yot8")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("view")]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8rgu7")
-view = NodePath("View")
-controller_value_stick_to_start_run = 0.8
+jump_velocity = 8.0
+
+[node name="MovementController" type="Node" parent="."]
+script = ExtResource("11_a6v0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80391, 0)

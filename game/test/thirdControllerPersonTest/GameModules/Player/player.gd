@@ -1,4 +1,4 @@
-#Este código necesita migrar sus animaciones a un Animation Controller, 
+#Este código necesita migrar su movimiento a movement controller, 
 #y un Input Controller, ademas de ser más modular, pero todo a su tiempo
 
 extends CharacterBody3D
@@ -15,7 +15,7 @@ signal sprinting_changed(is_sprinting)
 @export var sprint_speed = 7.0
 
 @export var jump_velocity = 4.5
-
+ 	
 @export_group("Control Properties")
 @export var controller_value_stick_to_start_run = 0.6
 
