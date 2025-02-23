@@ -37,7 +37,6 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8rgu7")
-jump_velocity = 8.0
 
 [node name="MovementController" type="Node" parent="."]
 script = ExtResource("11_a6v0s")

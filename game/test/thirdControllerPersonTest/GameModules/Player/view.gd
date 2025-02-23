@@ -18,8 +18,8 @@ extends Node3D
 
 var input := Vector3.ZERO
 
-func _ready():
-	player.sprinting_changed.connect(_on_sprinting_changed)
+#func _ready():
+	#player.sprinting_changed.connect(_on_sprinting_changed)
 
 func _physics_process(delta):
 	control_input()
