@@ -214,6 +214,11 @@ render_target_update_mode = 4
 
 [node name="Player" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("5_j6r3c")]
 transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 13.8801, 0.603868, -9.88386)
+walking_speed = 1.5
+running_speed = 4.0
+sprint_speed = 7.0
+jump_velocity = 4.5
+controller_value_stick_to_start_run = 0.6
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
 layout_mode = 2

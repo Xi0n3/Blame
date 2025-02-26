@@ -28,7 +28,6 @@ enabled=PackedStringArray()
 
 [filesystem]
 
-import/blender/enabled=false
 import/fbx/enabled=false
 
 [input]
