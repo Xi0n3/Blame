@@ -1,18 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://c0ca0kn24curg"]
+[gd_scene load_steps=15 format=3 uid="uid://c0ca0kn24curg"]
 
-[ext_resource type="Script" path="res://addons/thirdControllerPersonTest/GameModules/Player/player.gd" id="1_8rgu7"]
-[ext_resource type="Script" path="res://addons/thirdControllerPersonTest/GameModules/Player/view.gd" id="2_0y2m0"]
+[ext_resource type="Script" uid="uid://c5lb2k15am8v2" path="res://game/player/scripts/player.gd" id="1_8rgu7"]
+[ext_resource type="Script" uid="uid://dmftpqkaar6xf" path="res://game/player/scripts/view.gd" id="2_0y2m0"]
 [ext_resource type="PackedScene" uid="uid://ctbwrka5haane" path="res://game/player/visuals/model/player_model.tscn" id="2_oxgld"]
+[ext_resource type="Script" uid="uid://qg3yv70xkg5l" path="res://game/player/scripts/states/OnGround/player_state_idle.gd" id="3_jtm0w"]
 [ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://addons/thirdControllerPersonTest/scenes/system/user_interface.tscn" id="3_thab2"]
-[ext_resource type="Animation" uid="uid://ksayglfdvjlw" path="res://game/player/visuals/animations/src/fast_run.res" id="5_8qc4d"]
-[ext_resource type="Animation" uid="uid://b2v8aglpnkqkg" path="res://game/player/visuals/animations/src/walk.res" id="6_5yot8"]
-[ext_resource type="Animation" uid="uid://k5khsmj8yli8" path="res://game/player/visuals/animations/src/idle.res" id="7_5hxn5"]
-[ext_resource type="Animation" uid="uid://dcin2lthroo2p" path="res://game/player/visuals/animations/src/run.res" id="8_uly33"]
-[ext_resource type="Animation" uid="uid://cbcnafipqyeva" path="res://game/player/visuals/animations/src/run_with_sword.res" id="9_lh13j"]
-[ext_resource type="Animation" uid="uid://bb1opo4wlfef3" path="res://game/player/visuals/animations/src/sword_slash_1.res" id="10_ceduw"]
-[ext_resource type="Script" path="res://addons/thirdControllerPersonTest/GameModules/Player/movement_controller.gd" id="11_a6v0s"]
-[ext_resource type="Animation" uid="uid://pff5tjhv2cby" path="res://game/player/visuals/animations/src/fall.res" id="12_luye5"]
-[ext_resource type="Animation" uid="uid://wi2q4qtol83g" path="res://game/player/visuals/animations/src/fall_forward_death.res" id="13_g44cf"]
+[ext_resource type="Script" uid="uid://bd4hnvm3p47ow" path="res://game/player/scripts/states/OnGround/player_state_walking.gd" id="4_ixhdd"]
+[ext_resource type="Script" uid="uid://bxelfsdmc71rj" path="res://game/player/scripts/states/OnGround/player_state_running.gd" id="5_mgo4a"]
+[ext_resource type="Script" uid="uid://cerjlpj6qylj7" path="res://game/player/scripts/states/OnGround/player_state_sprinting.gd" id="6_wpknl"]
+[ext_resource type="Script" uid="uid://cj4e5yxjpga4u" path="res://game/player/scripts/states/OnGround/player_state_attack_ground.gd" id="7_083rv"]
+[ext_resource type="AnimationLibrary" uid="uid://coedug2714wi4" path="res://game/player/visuals/animations/src/library_movement.res" id="11_083rv"]
+[ext_resource type="Script" uid="uid://c3cjtonqq5xl7" path="res://game/scripts/StateMachine/state_machine.gd" id="13_1duel"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wole8"]
 radius = 0.25262
@@ -22,24 +20,30 @@ height = 1.6
 radius = 0.07
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ye53c"]
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bpseb"]
-_data = {
-"fall": ExtResource("12_luye5"),
-"fall_forward_death": ExtResource("13_g44cf"),
-"fast_run": ExtResource("5_8qc4d"),
-"idle": ExtResource("7_5hxn5"),
-"run": ExtResource("8_uly33"),
-"run_with_sword": ExtResource("9_lh13j"),
-"sword_slash_1": ExtResource("10_ceduw"),
-"walk": ExtResource("6_5yot8")
-}
+graph_offset = Vector2(221.613, 133.1)
+nodes/output/position = Vector2(740, 220)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8rgu7")
 
-[node name="MovementController" type="Node" parent="."]
-script = ExtResource("11_a6v0s")
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
+script = ExtResource("13_1duel")
+default_state = NodePath("PlayerStateIdle")
+
+[node name="PlayerStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("3_jtm0w")
+
+[node name="PlayerStateWalking" type="Node" parent="StateMachine"]
+script = ExtResource("4_ixhdd")
+
+[node name="PlayerStateRunning" type="Node" parent="StateMachine"]
+script = ExtResource("5_mgo4a")
+
+[node name="PlayerStateSprinting" type="Node" parent="StateMachine"]
+script = ExtResource("6_wpknl")
+
+[node name="PlayerStateAttackGround" type="Node" parent="StateMachine"]
+script = ExtResource("7_083rv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80391, 0)
@@ -66,8 +70,6 @@ transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 
 [node name="View" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3147, 0)
 script = ExtResource("2_0y2m0")
-controller_camera_sens_horizontal = 0.05
-controller_camera_sens_vertical = -0.05
 sprint_fov = 100
 max_rotation_y = 60
 min_rotation_y = -90
@@ -83,10 +85,12 @@ current = true
 [node name="fpsCount" parent="." instance=ExtResource("3_thab2")]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../visuals/mixamo_base/Armature/playerP")
 tree_root = SubResource("AnimationNodeBlendTree_ye53c")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../visuals/mixamo_base/Armature/playerP")
 libraries = {
-"Movement": SubResource("AnimationLibrary_bpseb")
+&"Movement": ExtResource("11_083rv")
 }

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvbijqf1jip23"]
 
-[ext_resource type="Script" path="res://addons/fpc/debug.gd" id="1_5ut3a"]
+[ext_resource type="Script" uid="uid://tskoub46yosh" path="res://addons/fpc/debug.gd" id="1_5ut3a"]
 
 [sub_resource type="Theme" id="Theme_wdf0f"]
 MarginContainer/constants/margin_bottom = 10

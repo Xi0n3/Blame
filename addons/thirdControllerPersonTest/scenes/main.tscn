@@ -134,7 +134,7 @@ transform = Transform3D(0.854667, 0.519176, 0, -0.519176, 0.854667, 0, 0, 0, 1, 
 transform = Transform3D(0.854667, 0.519176, 0, -0.519176, 0.854667, 0, 0, 0, 1, 2.73032, 6.34479, 0.169975)
 
 [node name="crate7" parent="decoraciones" instance=ExtResource("14_wh7wp")]
-transform = Transform3D(0.999687, 0.0249906, 0, -0.0249906, 0.999687, 0, 0, 0, 1, 9.74761, 1.25805, -6.1096)
+transform = Transform3D(0.999687, 0.0249906, 0, -0.0249906, 0.999687, 0, 0, 0, 1, 9.74761, 1.25805, -14.7651)
 can_sleep = false
 constant_torque = Vector3(3, 3, 3)
 
@@ -225,3 +225,6 @@ stretch = true
 handle_input_locally = false
 size = Vector2i(1280, 358)
 render_target_update_mode = 4
+
+[node name="Player" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_j6r3c")]
+transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 15.6787, 0.603868, -9.88386)
