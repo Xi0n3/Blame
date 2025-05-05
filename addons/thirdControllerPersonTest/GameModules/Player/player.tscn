@@ -92,5 +92,5 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../visuals/mixamo_base/Armature/playerP")
 libraries = {
-&"Movement": ExtResource("11_083rv")
+&"PlayerMovement": ExtResource("11_083rv")
 }

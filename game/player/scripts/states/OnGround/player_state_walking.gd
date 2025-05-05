@@ -5,11 +5,12 @@ func state_process(delta):
 	pass
 
 func start():
-	if player.animation_player.current_animation != "Movement/walk":
-		player.animation_player.play("Movement/walk", 0.3)
+	if player.animation_player.current_animation != "PlayerMovement/walk":
+		player.animation_player.play("PlayerMovement/walk", 0.3)
 
 
 func state_physics_process(delta):
+	super.state_physics_process(delta)
 	player.SPEED = player.walking_speed
 	
 	player.velocity.x = direction.x * player.SPEED

@@ -1,10 +1,11 @@
 extends PlayerStateOnGround
 
 func start():
-	if player.animation_player.current_animation != "Movement/run":
-		player.animation_player.play("Movement/run",  0.3)
+	if player.animation_player.current_animation != "PlayerMovement/run":
+		player.animation_player.play("PlayerMovement/run",  0.3)
 
 func state_physics_process(delta):
+	super.state_physics_process(delta)
 	player.SPEED = player.running_speed
 	
 	player.velocity.x = direction.x * player.SPEED

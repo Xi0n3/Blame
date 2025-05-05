@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=25 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://addons/thirdControllerPersonTest/textures/grids/Dark/texture_05.png" id="1_j15he"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://addons/thirdControllerPersonTest/textures/grids/Orange/texture_09.png" id="2_26ydl"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/crate.tscn" id="14_wh7wp"]
 [ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/bench.tscn" id="15_ppxr2"]
 [ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/levels/test/dungeon/scenes/testDungeon.tscn" id="16_u2pwe"]
+[ext_resource type="Script" uid="uid://b76ftgxwrrkhb" path="res://game/scripts/input_manager.gd" id="17_vvlo7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
 sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
@@ -90,6 +91,12 @@ size = Vector3(2, 2, 2)
 
 [node name="box3" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.959186, 0, 0.282777, 0, 1, 0, -0.282777, 0, 0.959186, 4.11051, 1.98557, 4.1643)
+material_override = SubResource("StandardMaterial3D_oi22d")
+use_collision = true
+size = Vector3(3, 3, 3)
+
+[node name="box4" type="CSGBox3D" parent="map"]
+transform = Transform3D(9.37508, 1.76475, -0.0217241, 0.27238, 11.9644, 0.140817, -1.41008, 14.0442, -0.117234, 16.9638, 16.1992, 24.6861)
 material_override = SubResource("StandardMaterial3D_oi22d")
 use_collision = true
 size = Vector3(3, 3, 3)
@@ -228,3 +235,6 @@ render_target_update_mode = 4
 
 [node name="Player" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_j6r3c")]
 transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 15.6787, 0.603868, -9.88386)
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("17_vvlo7")

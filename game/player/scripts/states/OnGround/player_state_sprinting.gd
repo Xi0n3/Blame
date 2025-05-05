@@ -1,12 +1,13 @@
 extends PlayerStateOnGround
 
 func start():
-	if player.animation_player.current_animation != "Movement/sprint":
-		player.animation_player.play("Movement/sprint", 0.3)
+	if player.animation_player.current_animation != "PlayerMovement/sprint":
+		player.animation_player.play("PlayerMovement/sprint", 0.3)
 	#Manda una señal a View para el fov de la camara
 	player.sprinting_changed.emit(true) 
 
 func state_physics_process(delta):
+	super.state_physics_process(delta)
 	player.SPEED = player.sprint_speed
 	
 	player.velocity.x = direction.x * player.SPEED
