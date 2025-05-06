@@ -39,9 +39,10 @@ func _physics_process(delta):
 	
 
 func control_input():
-	var cam_input_dir = Input.get_vector("camera_right", "camera_left", "camera_up", "camera_down")
+	var cam_input_dir = player.input_ref.get_camera_direction()
 	if cam_input_dir:
-		input.x = cam_input_dir.x*controller_camera_sens_horizontal
+		# Cambiar el negativo para invertir el movimiento
+		input.x = -cam_input_dir.x*controller_camera_sens_horizontal
 		input.y = cam_input_dir.y*controller_camera_sens_vertical
 	
 func _input(event):

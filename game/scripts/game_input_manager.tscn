@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsb0oqvrwpuat"]
+
+[ext_resource type="Script" uid="uid://b76ftgxwrrkhb" path="res://game/scripts/GameInputManager.gd" id="1_e7pn8"]
+
+[node name="GameInputManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_e7pn8")

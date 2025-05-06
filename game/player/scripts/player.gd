@@ -4,6 +4,9 @@ extends CharacterBody3D
 signal sprinting_changed(is_sprinting)
 
 @export_group("Properties")
+@export_enum("Luna", "Sol")
+var jugador_id := 0
+
 @export_group("Properties/Movement")
 @export var walking_speed = 1.5
 @export var running_speed = 4.0
@@ -29,13 +32,21 @@ var JUMP_VELOCITY = jump_velocity
 var running =  false
 var walking_mode = false
 var is_locked = false
+var input_ref = GameInputManager.Player1
+
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-#TODO esto no debería estar aquí
+
 func _ready():
+	#TODO esto no debería estar aquí
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Engine.max_fps = 60;
+	
+	add_to_group("players")
+	if jugador_id == 1:
+		input_ref = GameInputManager.Player2
+
 #TODO esto tampoco debería estar aquí
 #Funcion para escuchar cualquier evento
 func _process(delta):
@@ -48,45 +59,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("walking_mode"):
 		if walking_mode: walking_mode=false; print("walkmodeOFF")
 		else: walking_mode = true;  print("walkmodeON")
-
-
-	## Add the gravity.
-	#if not is_on_floor():
-		#velocity.y -= gravity * delta
-#
-	## Handle jump.
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-#
-	## Get the input direction and handle the movement/deceleration.
-	## As good practice, you should replace UI actions with custom gameplay actions.
-	#var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	#var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	#if direction:
-		#if !is_locked:
-			#if  (!walking_mode && (abs(input_dir.x) + abs(input_dir.y))>controller_value_stick_to_start_run):
-				#if Input.is_action_pressed("sprint"):
-					#if animation_player.current_animation != "Movement/fast_run":
-						#animation_player.play("Movement/fast_run")
-					#SPEED = sprint_speed
-					#sprinting_changed.emit(true) 
-				#else:
-					#if animation_player.current_animation != "Movement/run":
-						#animation_player.play("Movement/run")
-					#SPEED = running_speed
-					#running = true
-			#else:
-				#if animation_player.current_animation != "Movement/walk":
-					#animation_player.play("Movement/walk")
-			#visuals.look_at(position + direction)
-		#velocity.x = direction.x * SPEED
-		#velocity.z = direction.z * SPEED
-	#else:
-		#if !is_locked:
-			#if animation_player.current_animation != "Movement/idle":
-				#animation_player.play("Movement/idle")
-		#
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#velocity.z = move_toward(velocity.z, 0, SPEED)
-	#if !is_locked:
-		#move_and_slide() 
+		
+func assign_input(input: GameInputManager.PlayerInput):
+	input_ref = input
