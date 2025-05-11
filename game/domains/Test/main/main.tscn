@@ -237,6 +237,12 @@ render_target_update_mode = 4
 transform = Transform3D(-0.784993, 0, -0.619506, 0, 1, 0, 0.619506, 0, -0.784993, 7.697, 0.603868, -13.1046)
 jugador_id = 1
 
+[node name="Sword" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals/Model/Armature/playerModel/Armature/Skeleton3D/SwordAttachment" index="0"]
+transform = Transform3D(0.96069, -9.9533, 0.0965745, 9.87251, 0.965165, 1.26575, -1.26916, -0.0262567, 9.91911, 0.0048008, 0.00793236, 0.00193176)
+
+[node name="CollisionShape3D" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals/Model/Armature/playerModel/Armature/Skeleton3D/SwordAttachment/Hitbox" index="0"]
+transform = Transform3D(0.995213, 0.0976202, -0.0046384, -0.0976593, 0.995178, -0.00911593, 0.00372613, 0.00952527, 0.999948, 0.038303, 0.00475378, 0.00167509)
+
 [node name="OmniLight3D" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals" index="1"]
 light_color = Color(0.833613, 0.769715, 0, 1)
 

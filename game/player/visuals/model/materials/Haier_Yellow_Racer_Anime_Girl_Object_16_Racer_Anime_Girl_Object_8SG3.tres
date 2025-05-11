@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cl36516prht2o"]
+
+[resource]
+resource_name = "Haier:Racer_Anime_Girl_Object_16_Racer_Anime_Girl_Object_8SG3"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.905161, 0.862069, 7.70092e-07, 1)
+emission_enabled = true

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b720nsofqs2u"]
+
+[ext_resource type="Texture2D" uid="uid://6krqgl3v4s2u" path="res://game/player/visuals/textures/GirlTop_Base_color.png" id="1_5bkv0"]
+
+[resource]
+resource_name = "Girl_Top"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_5bkv0")
+emission_enabled = true

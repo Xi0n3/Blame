@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b30d7r2ol4xlb"]
+
+[resource]
+resource_name = "lambert7"
+vertex_color_use_as_albedo = true
+emission_enabled = true

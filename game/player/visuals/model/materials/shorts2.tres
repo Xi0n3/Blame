@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0kpo3m5d2ltb"]
+
+[ext_resource type="Texture2D" uid="uid://cl38g6dn66v26" path="res://game/player/visuals/textures/shorts_Base_color.png" id="1_rb2is"]
+
+[resource]
+resource_name = "shorts2"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_rb2is")
+emission_enabled = true

@@ -33,8 +33,49 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"Girl_Top": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/Girl_Top.tres"
+},
+"Haier:Racer_Anime_Girl_Object_16_Racer_Anime_Girl_Object_8SG3": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/Haier_Racer_Anime_Girl_Object_16_Racer_Anime_Girl_Object_8SG3.tres"
+},
+"Skin": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/Skin.tres"
+},
+"lambert6": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/lambert6.tres"
+},
+"lambert7": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/lambert7.tres"
+},
+"lambert8": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/lambert8.tres"
+},
+"lambert9": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/lambert9.tres"
+},
+"shorts2": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/shorts2.tres"
+},
+"surfaceShader1": {
+"use_external/enabled": true,
+"use_external/path": "res://game/player/visuals/model/materials/surfaceShader1.tres"
+}
+},
 "nodes": {
 "PATH:AnimationPlayer": {
+"import/skip_import": true
+},
+"PATH:group4": {
 "import/skip_import": true
 }
 }
