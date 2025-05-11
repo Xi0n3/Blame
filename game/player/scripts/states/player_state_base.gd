@@ -17,8 +17,10 @@ func _physics_process(delta):
 		#print("Player no esta cargado")
 		return
 	input_dir = player.input_ref.direction()
+	#input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	#print(self.owner.name + str(player.input_ref))
 	direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	
 func _input(_event):
 	#print(self.owner.name + " Directo: " + str(Input.get_vector("move_left", "move_right", "move_up", "move_down")))

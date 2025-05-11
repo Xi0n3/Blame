@@ -233,6 +233,7 @@ class PlayerInput:
 	var device_id: int
 	var previous_buttons := {}
 	var previous_axes := {}
+	var deadzone := 0.2  # Valor configurable para la zona muerta
 	
 	func _init(input_type: String, id: int):
 		type = input_type
@@ -254,20 +255,17 @@ class PlayerInput:
 				direction.y -= 1
 		
 		elif type == "joypad":
-			# Joystick analógico - con ajuste de sensibilidad
-			var raw_x = Input.get_joy_axis(device_id, JOY_AXIS_LEFT_X)
-			var raw_y = Input.get_joy_axis(device_id, JOY_AXIS_LEFT_Y)
+			# OPTIMIZACIÓN: Usar un enfoque similar a Input.get_vector para mayor precisión
+			var raw_input = Vector2(
+				Input.get_joy_axis(device_id, JOY_AXIS_LEFT_X),
+				Input.get_joy_axis(device_id, JOY_AXIS_LEFT_Y)
+			)
 			
-			# Aplicar zona muerta y ajuste de curva para valores bajos
-			var deadzone = 0.2
-			if abs(raw_x) > deadzone:
-				# Aplicar curva para suavizar valores bajos
-				var sign_x = sign(raw_x)
-				direction.x = sign_x * ((abs(raw_x) - deadzone) / (1.0 - deadzone))
-			
-			if abs(raw_y) > deadzone:
-				var sign_y = sign(raw_y)
-				direction.y = sign_y * ((abs(raw_y) - deadzone) / (1.0 - deadzone))
+			# Aplicar deadzone radial (como lo hace Input.get_vector)
+			var input_length = raw_input.length()
+			if input_length > deadzone:
+				# Normalizar y ajustar la magnitud considerando la deadzone
+				direction = raw_input * ((input_length - deadzone) / (1.0 - deadzone)) / input_length
 			
 			# D-pad digital (valores exactos)
 			if Input.is_joy_button_pressed(device_id, JOY_BUTTON_DPAD_RIGHT):
@@ -280,10 +278,8 @@ class PlayerInput:
 			elif Input.is_joy_button_pressed(device_id, JOY_BUTTON_DPAD_UP):
 				direction.y = -1.0
 		
-		# Si el vector es muy pequeño después del procesamiento, igualarlo a cero
-		if direction.length() < 0.1:
-			direction = Vector2.ZERO
-		elif direction.length() > 1.0:
+		# Normalizar si es necesario
+		if direction.length() > 1.0:
 			direction = direction.normalized()
 			
 		return direction
@@ -291,12 +287,11 @@ class PlayerInput:
 	# Obtener vector de dirección de la cámara (joystick derecho/Mouse)
 	func get_camera_direction() -> Vector2:
 		var direction = Vector2.ZERO
-		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 		if type == "keyboard":
 			# Si el ratón está capturado, usar el movimiento del ratón
 			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-				direction = Input.get_last_mouse_velocity()
-				direction = -direction*0.01
+				direction = Input.get_last_mouse_velocity() * -0.01
 			else:
 				# Usando flechas como respaldo si el ratón no está capturado
 				if Input.is_key_pressed(KEY_RIGHT):
@@ -309,24 +304,18 @@ class PlayerInput:
 					direction.y -= 1
 		
 		elif type == "joypad":
-			# Joystick derecho
-			var raw_x = Input.get_joy_axis(device_id, JOY_AXIS_RIGHT_X)
-			var raw_y = Input.get_joy_axis(device_id, JOY_AXIS_RIGHT_Y)
+			# OPTIMIZACIÓN: Mismo enfoque que en get_direction para mayor precisión
+			var raw_input = Vector2(
+				Input.get_joy_axis(device_id, JOY_AXIS_RIGHT_X),
+				Input.get_joy_axis(device_id, JOY_AXIS_RIGHT_Y)
+			)
 			
-			# Aplicar zona muerta y ajuste de curva igual que en get_direction
-			var deadzone = 0.2
-			if abs(raw_x) > deadzone:
-				var sign_x = sign(raw_x)
-				direction.x = sign_x * ((abs(raw_x) - deadzone) / (1.0 - deadzone))
-			
-			if abs(raw_y) > deadzone:
-				var sign_y = sign(raw_y)
-				direction.y = sign_y * ((abs(raw_y) - deadzone) / (1.0 - deadzone))
+			var input_length = raw_input.length()
+			if input_length > deadzone:
+				direction = raw_input * ((input_length - deadzone) / (1.0 - deadzone)) / input_length
 		
-		# Si el vector es muy pequeño después del procesamiento, igualarlo a cero
-		if direction.length() < 0.1:
-			direction = Vector2.ZERO
-		elif direction.length() > 1.0:
+		# Normalizar si es necesario
+		if direction.length() > 1.0:
 			direction = direction.normalized()
 			
 		return direction

@@ -41,7 +41,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	#TODO esto no debería estar aquí
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	Engine.max_fps = 60;
+	Engine.max_fps = 120;
 	
 	add_to_group("players")
 	if jugador_id == 1:
