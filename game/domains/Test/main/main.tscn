@@ -1,22 +1,22 @@
 [gd_scene load_steps=25 format=3 uid="uid://bssm8p8a5megh"]
 
-[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://addons/thirdControllerPersonTest/textures/grids/Dark/texture_05.png" id="1_j15he"]
-[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://addons/thirdControllerPersonTest/textures/grids/Orange/texture_09.png" id="2_26ydl"]
-[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://addons/thirdControllerPersonTest/textures/grids/Purple/texture_09.png" id="3_ik0bg"]
-[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://addons/thirdControllerPersonTest/textures/grids/Green/texture_09.png" id="4_6nugu"]
-[ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://game/player/player.tscn" id="5_j6r3c"]
-[ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/table.tscn" id="9_w3a5e"]
-[ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/tall_stool.tscn" id="11_ecvso"]
-[ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/chair.tscn" id="12_1r8gu"]
-[ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/closet_large.tscn" id="12_1vt4u"]
-[ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/barrel.tscn" id="12_mqein"]
-[ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/closet_medium.tscn" id="12_rc7vb"]
-[ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/closet_small.tscn" id="13_6hxqe"]
-[ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/stool.tscn" id="14_fc67s"]
-[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/crate.tscn" id="14_wh7wp"]
-[ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/bench.tscn" id="15_ppxr2"]
-[ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeon/scenes/testDungeon.tscn" id="16_u2pwe"]
-[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://addons/thirdControllerPersonTest/scenes/system/user_interface.tscn" id="17_vvlo7"]
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
+[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/textures/grids/Orange/texture_09.png" id="2_i10sp"]
+[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://game/domains/Test/main/textures/grids/Purple/texture_09.png" id="3_o0ar1"]
+[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://game/domains/Test/main/textures/grids/Green/texture_09.png" id="4_463pv"]
+[ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://game/domains/Test/main/decoraciones/closet_medium.tscn" id="5_h8s54"]
+[ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://game/domains/Test/main/decoraciones/closet_small.tscn" id="6_oh1vt"]
+[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/decoraciones/crate.tscn" id="7_ig2si"]
+[ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/decoraciones/tall_stool.tscn" id="8_rydj3"]
+[ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/decoraciones/chair.tscn" id="9_jvslr"]
+[ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/decoraciones/stool.tscn" id="10_0om4d"]
+[ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/decoraciones/table.tscn" id="11_c8x31"]
+[ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/decoraciones/barrel.tscn" id="12_r5heq"]
+[ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://game/domains/Test/main/decoraciones/bench.tscn" id="13_oe7qi"]
+[ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://game/domains/Test/main/decoraciones/closet_large.tscn" id="14_4qyl6"]
+[ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeon/scenes/testDungeon.tscn" id="15_1ekqo"]
+[ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://game/player/player.tscn" id="16_hbmcl"]
+[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://game/system/user_interface.tscn" id="17_yp5ar"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
 sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
@@ -46,18 +46,18 @@ volumetric_fog_density = 0.005
 adjustment_brightness = 0.67
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1ov7"]
-albedo_texture = ExtResource("1_j15he")
+albedo_texture = ExtResource("1_8ci3x")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji57p"]
-albedo_texture = ExtResource("2_26ydl")
+albedo_texture = ExtResource("2_i10sp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlqog"]
-albedo_texture = ExtResource("3_ik0bg")
+albedo_texture = ExtResource("3_o0ar1")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi22d"]
-albedo_texture = ExtResource("4_6nugu")
+albedo_texture = ExtResource("4_463pv")
 uv2_triplanar = true
 
 [node name="world" type="Node3D"]
@@ -119,84 +119,84 @@ spot_range = 4.651
 spot_attenuation = 0.659754
 spot_angle_attenuation = 0.594604
 
-[node name="closet_medium" parent="decoraciones" instance=ExtResource("12_rc7vb")]
+[node name="closet_medium" parent="decoraciones" instance=ExtResource("5_h8s54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00634, 0.5, -4.34166)
 
-[node name="closet_small" parent="decoraciones" instance=ExtResource("13_6hxqe")]
+[node name="closet_small" parent="decoraciones" instance=ExtResource("6_oh1vt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4334, 0.5, -4.26655)
 
-[node name="crate" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83031, 6.34479, 0.322638)
 
-[node name="crate3" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate3" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(1, 0, 0, 0, 0.91007, -0.414455, 0, 0.414455, 0.91007, 4.80825, 6.34479, 0.169975)
 
-[node name="crate4" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate4" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(1, 0, 0, 0, 0.974882, -0.222723, 0, 0.222723, 0.974882, 3.83031, 7.4218, 0.169975)
 
-[node name="crate5" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate5" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(0.854667, 0.519176, 0, -0.519176, 0.854667, 0, 0, 0, 1, 2.73032, 6.34479, 0.169975)
 
-[node name="crate6" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate6" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(0.854667, 0.519176, 0, -0.519176, 0.854667, 0, 0, 0, 1, 2.73032, 6.34479, 0.169975)
 
-[node name="crate7" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate7" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(0.999687, 0.0249906, 0, -0.0249906, 0.999687, 0, 0, 0, 1, 9.74761, 1.25805, -14.7651)
 can_sleep = false
 constant_torque = Vector3(3, 3, 3)
 
-[node name="tall_stool2" parent="decoraciones" instance=ExtResource("11_ecvso")]
+[node name="tall_stool2" parent="decoraciones" instance=ExtResource("8_rydj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4371, 0.5, -0.114361)
 
-[node name="chair2" parent="decoraciones" instance=ExtResource("12_1r8gu")]
+[node name="chair2" parent="decoraciones" instance=ExtResource("9_jvslr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.68403, 0.5, -0.0329387)
 
-[node name="crate2" parent="decoraciones" instance=ExtResource("14_wh7wp")]
+[node name="crate2" parent="decoraciones" instance=ExtResource("7_ig2si")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78029, 0.5, 1.44388)
 
-[node name="stool" parent="decoraciones" instance=ExtResource("14_fc67s")]
+[node name="stool" parent="decoraciones" instance=ExtResource("10_0om4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76139, 1.5, 1.45851)
 
-[node name="stool2" parent="decoraciones" instance=ExtResource("14_fc67s")]
+[node name="stool2" parent="decoraciones" instance=ExtResource("10_0om4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 1)
 
-[node name="stool3" parent="decoraciones" instance=ExtResource("14_fc67s")]
+[node name="stool3" parent="decoraciones" instance=ExtResource("10_0om4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00301, 2.45812, 0.803785)
 
-[node name="table3" parent="decoraciones" instance=ExtResource("9_w3a5e")]
+[node name="table3" parent="decoraciones" instance=ExtResource("11_c8x31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95485, 0.5, 0.960958)
 
-[node name="barrel2" parent="decoraciones" instance=ExtResource("12_mqein")]
+[node name="barrel2" parent="decoraciones" instance=ExtResource("12_r5heq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9627, 0.5, -3.52807)
 
-[node name="barrel3" parent="decoraciones" instance=ExtResource("12_mqein")]
+[node name="barrel3" parent="decoraciones" instance=ExtResource("12_r5heq")]
 transform = Transform3D(-0.138378, -0.99038, 0, 0.99038, -0.138378, 0, 0, 0, 1, 6.57042, 1.581, 1.06682)
 
-[node name="barrel4" parent="decoraciones" instance=ExtResource("12_mqein")]
+[node name="barrel4" parent="decoraciones" instance=ExtResource("12_r5heq")]
 transform = Transform3D(-0.138378, -0.99038, 0, 0.99038, -0.138378, 0, 0, 0, 1, 6.57042, 2.31153, 0.789495)
 
-[node name="barrel5" parent="decoraciones" instance=ExtResource("12_mqein")]
+[node name="barrel5" parent="decoraciones" instance=ExtResource("12_r5heq")]
 transform = Transform3D(-0.138378, -0.99038, 0, 0.99038, -0.138378, 0, 0, 0, 1, 6.57042, 3.06191, 1.06682)
 
-[node name="bench" parent="decoraciones" instance=ExtResource("15_ppxr2")]
+[node name="bench" parent="decoraciones" instance=ExtResource("13_oe7qi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7358, 0.5, -1.60966)
 
-[node name="table2" parent="decoraciones" instance=ExtResource("9_w3a5e")]
+[node name="table2" parent="decoraciones" instance=ExtResource("11_c8x31")]
 transform = Transform3D(0.0143113, 0, -0.999898, 0, 1, 0, 0.999898, 0, 0.0143113, 8.4815, 0.501648, -2.02111)
 
-[node name="barrel" parent="decoraciones" instance=ExtResource("12_mqein")]
+[node name="barrel" parent="decoraciones" instance=ExtResource("12_r5heq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.07738, 0.502698, -4.40497)
 
-[node name="tall_stool" parent="decoraciones" instance=ExtResource("11_ecvso")]
+[node name="tall_stool" parent="decoraciones" instance=ExtResource("8_rydj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71165, 0.5, -1.08458)
 
-[node name="chair" parent="decoraciones" instance=ExtResource("12_1r8gu")]
+[node name="chair" parent="decoraciones" instance=ExtResource("9_jvslr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6283, 0.523618, -3.09478)
 
-[node name="closet_large" parent="decoraciones" instance=ExtResource("12_1vt4u")]
+[node name="closet_large" parent="decoraciones" instance=ExtResource("14_4qyl6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55375, 0.5, -4.41831)
 
-[node name="TestDungeon" parent="." instance=ExtResource("16_u2pwe")]
+[node name="TestDungeon" parent="." instance=ExtResource("15_1ekqo")]
 transform = Transform3D(0.842283, 0, -0.539035, 0, 1, 0, 0.539035, 0, 0.842283, 0, 0.488828, -19.687)
 
 [node name="GridContainer" type="GridContainer" parent="."]
@@ -206,8 +206,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InputManager" type="Node" parent="GridContainer"]
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -216,13 +214,13 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1280, 358)
 render_target_update_mode = 4
 
-[node name="Luna" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("5_j6r3c")]
+[node name="Luna" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("16_hbmcl")]
 transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 13.8801, 0.603868, -9.88386)
 
-[node name="fpsCount" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("17_vvlo7")]
+[node name="fpsCount" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("17_yp5ar")]
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
 layout_mode = 2
@@ -232,11 +230,11 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1280, 358)
 render_target_update_mode = 4
 
-[node name="Sol" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_j6r3c")]
+[node name="Sol" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("16_hbmcl")]
 transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 15.6787, 0.603868, -9.88386)
 jugador_id = 1
 
-[node name="fpsCount" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("17_vvlo7")]
+[node name="fpsCount" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("17_yp5ar")]
