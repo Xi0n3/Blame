@@ -19,8 +19,9 @@ func state_physics_process(delta):
 
 func state_input(_event):
 	super.state_input(_event)
-	# seria mejor usar el parametro _event para obtener la información del evento
-	if (!player.walking_mode && (abs(input_dir.x) + abs(input_dir.y))>player.controller_value_stick_to_start_run): 
+	
+	# Verificar si debe correr - Usando la función optimizada de InputManager
+	if player.input_ref.should_run():
 		state_machine.change_to(player.states.Running)
-	elif !direction :
+	elif !direction:
 		state_machine.change_to(player.states.Idle)

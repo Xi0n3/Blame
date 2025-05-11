@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs3iyspmmf08p"
-path.s3tc="res://.godot/imported/tileset_atlas.png-79024d876d1fa3f4e2f082126003c4cc.s3tc.ctex"
+uid="uid://d1h161t0v6hau"
+path.s3tc="res://.godot/imported/red.png-320ca0e3017994a6c10ca4985ed50854.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game/levels/test/dungeon/textures/tileset_atlas.png"
-dest_files=["res://.godot/imported/tileset_atlas.png-79024d876d1fa3f4e2f082126003c4cc.s3tc.ctex"]
+source_file="res://game/domains/Test/dungeon/textures/red.png"
+dest_files=["res://.godot/imported/red.png-320ca0e3017994a6c10ca4985ed50854.s3tc.ctex"]
 
 [params]
 

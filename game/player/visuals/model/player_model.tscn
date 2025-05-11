@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dhbh6drx78ir8" path="res://game/player/visuals/model/player_model.fbx" id="1_1ac6l"]
 
 [node name="playerP" instance=ExtResource("1_1ac6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12907, 0)
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, -1.62921e-06, 0, 1.62921e-06, 10, 0, -1.24481, 0)
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/1/position = Vector3(-8.27181e-25, 0.00775505, -0.000824776)
@@ -17,7 +21,7 @@ bones/5/rotation = Quaternion(5.87745e-09, -7.70783e-29, -2.79245e-21, 1)
 bones/6/position = Vector3(-2.81241e-23, 0.027241, -0.00703351)
 bones/6/rotation = Quaternion(0, -3.19151e-30, 5.16052e-22, 1)
 bones/7/position = Vector3(0, 0.0281344, 8.17507e-10)
-bones/7/rotation = Quaternion(1.07708e-09, 4.03897e-30, -4.82272e-37, 1)
+bones/7/rotation = Quaternion(1.07708e-09, 4.03897e-30, -4.77922e-37, 1)
 bones/9/position = Vector3(0.00426243, 0.0104182, -0.000126907)
 bones/9/rotation = Quaternion(-0.558271, -0.429048, 0.575014, -0.416665)
 bones/9/scale = Vector3(1, 1, 1)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://bb8yybunl61et"]
 
-[ext_resource type="Texture2D" uid="uid://7aspoq50e1lg" path="res://game/levels/test/dungeon/textures/2024-06-19_19-06-29.198_bot.png" id="2_7cpqp"]
-[ext_resource type="MeshLibrary" uid="uid://j2was1ytc0wj" path="res://game/levels/test/dungeon/structures/tileset.tres" id="2_jddph"]
-[ext_resource type="PackedScene" uid="uid://tacskbkiwcby" path="res://game/levels/test/dungeon/scenes/chest_zone.tscn" id="4_fpbay"]
+[ext_resource type="Texture2D" uid="uid://7aspoq50e1lg" path="res://game/domains/Test/dungeon/textures/2024-06-19_19-06-29.198_bot.png" id="2_7cpqp"]
+[ext_resource type="MeshLibrary" uid="uid://j2was1ytc0wj" path="res://game/domains/Test/dungeon/structures/tileset.tres" id="2_jddph"]
+[ext_resource type="PackedScene" uid="uid://tacskbkiwcby" path="res://game/domains/Test/dungeon/scenes/chest_zone.tscn" id="4_fpbay"]
 [ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/closet_medium.tscn" id="5_2ahx6"]
 [ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/closet_small.tscn" id="6_th3kt"]
 [ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/crate.tscn" id="7_ueuk6"]

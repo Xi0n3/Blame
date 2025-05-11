@@ -10,5 +10,4 @@ func state_input(_event):
 		pass
 
 func state_physics_process(delta):
-	if direction.length_squared() > 0.01:
-		player.visuals.look_at(player.position + direction, Vector3.UP)
+	pass

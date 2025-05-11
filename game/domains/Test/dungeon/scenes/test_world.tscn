@@ -1,11 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfdpve1rqo2ms"]
+[gd_scene load_steps=14 format=3 uid="uid://dfdpve1rqo2ms"]
 
-[ext_resource type="Texture2D" uid="uid://pe7a4weirj2g" path="res://game/levels/test/dungeon/textures/dark.png" id="2_08fdt"]
-[ext_resource type="Texture2D" uid="uid://cxjxvqmf4boxq" path="res://game/levels/test/dungeon/textures/green.png" id="3_q4clv"]
-[ext_resource type="Texture2D" uid="uid://dsv4jm4vydflb" path="res://game/levels/test/dungeon/textures/orange.png" id="4_1ns5t"]
-
-[sub_resource type="Resource" id="Resource_a06gn"]
-metadata/__load_path__ = "res://addons/fpc/character.tscn"
+[ext_resource type="Texture2D" uid="uid://pe7a4weirj2g" path="res://game/domains/Test/dungeon/textures/dark.png" id="2_08fdt"]
+[ext_resource type="Texture2D" uid="uid://cxjxvqmf4boxq" path="res://game/domains/Test/dungeon/textures/green.png" id="3_q4clv"]
+[ext_resource type="Texture2D" uid="uid://dsv4jm4vydflb" path="res://game/domains/Test/dungeon/textures/orange.png" id="4_1ns5t"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_edcox"]
 ground_color = Color(0.160784, 0.815686, 0.905882, 1)
@@ -63,9 +60,6 @@ uv1_triplanar = true
 uv1_triplanar_sharpness = 0.000850145
 
 [node name="test_world" type="Node3D"]
-
-[node name="Character" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_20rw3")

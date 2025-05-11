@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7aspoq50e1lg"
-path.s3tc="res://.godot/imported/2024-06-19_19-06-29.198_bot.png-d1e056ddcf1b64ddf5e294c5c590f20c.s3tc.ctex"
+path.s3tc="res://.godot/imported/2024-06-19_19-06-29.198_bot.png-0c094b6014b6b94918db465c9a0bfbf0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game/levels/test/dungeon/textures/2024-06-19_19-06-29.198_bot.png"
-dest_files=["res://.godot/imported/2024-06-19_19-06-29.198_bot.png-d1e056ddcf1b64ddf5e294c5c590f20c.s3tc.ctex"]
+source_file="res://game/domains/Test/dungeon/textures/2024-06-19_19-06-29.198_bot.png"
+dest_files=["res://.godot/imported/2024-06-19_19-06-29.198_bot.png-0c094b6014b6b94918db465c9a0bfbf0.s3tc.ctex"]
 
 [params]
 

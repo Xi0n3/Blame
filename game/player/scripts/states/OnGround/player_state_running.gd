@@ -15,7 +15,7 @@ func state_physics_process(delta):
 func state_input(_event):
 	super.state_input(_event)
 	
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") && player.input_ref.should_run():
 		state_machine.change_to(player.states.Sprinting)
-	elif !(!player.walking_mode && (abs(input_dir.x) + abs(input_dir.y))>player.controller_value_stick_to_start_run):
+	elif !player.input_ref.should_run():
 		state_machine.change_to(player.states.Walking)

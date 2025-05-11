@@ -2,26 +2,28 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbfrrvjvsu7r"
-path="res://.godot/imported/Screenshot_2024-10-22_180439.png-470325ef6e2805013ed8d853fddc2e12.ctex"
+uid="uid://bobpa3gv2k6sm"
+path.s3tc="res://.godot/imported/tileset_atlas.png-c49eb7c1c9be33720a8428c865bab7d0.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://game/player/visuals/textures/Screenshot_2024-10-22_180439.png"
-dest_files=["res://.godot/imported/Screenshot_2024-10-22_180439.png-470325ef6e2805013ed8d853fddc2e12.ctex"]
+source_file="res://game/domains/Test/dungeon/structures/tileset_atlas.png"
+dest_files=["res://.godot/imported/tileset_atlas.png-c49eb7c1c9be33720a8428c865bab7d0.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

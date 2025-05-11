@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=25 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://addons/thirdControllerPersonTest/textures/grids/Dark/texture_05.png" id="1_j15he"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://addons/thirdControllerPersonTest/textures/grids/Orange/texture_09.png" id="2_26ydl"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://addons/thirdControllerPersonTest/textures/grids/Purple/texture_09.png" id="3_ik0bg"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://addons/thirdControllerPersonTest/textures/grids/Green/texture_09.png" id="4_6nugu"]
-[ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://addons/thirdControllerPersonTest/GameModules/Player/player.tscn" id="5_j6r3c"]
+[ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://game/player/player.tscn" id="5_j6r3c"]
 [ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/table.tscn" id="9_w3a5e"]
 [ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/tall_stool.tscn" id="11_ecvso"]
 [ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/chair.tscn" id="12_1r8gu"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/stool.tscn" id="14_fc67s"]
 [ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/crate.tscn" id="14_wh7wp"]
 [ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://addons/thirdControllerPersonTest/scenes/decoraciones/bench.tscn" id="15_ppxr2"]
-[ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/levels/test/dungeon/scenes/testDungeon.tscn" id="16_u2pwe"]
+[ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeon/scenes/testDungeon.tscn" id="16_u2pwe"]
+[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://addons/thirdControllerPersonTest/scenes/system/user_interface.tscn" id="17_vvlo7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
 sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
@@ -215,11 +216,13 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(1280, 358)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Luna" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("5_j6r3c")]
 transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 13.8801, 0.603868, -9.88386)
+
+[node name="fpsCount" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("17_vvlo7")]
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
 layout_mode = 2
@@ -229,9 +232,11 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
 handle_input_locally = false
-size = Vector2i(1280, 358)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Sol" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_j6r3c")]
 transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 15.6787, 0.603868, -9.88386)
 jugador_id = 1
+
+[node name="fpsCount" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("17_vvlo7")]

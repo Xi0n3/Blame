@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0ca0kn24curg"]
+[gd_scene load_steps=14 format=3 uid="uid://c0ca0kn24curg"]
 
 [ext_resource type="Script" uid="uid://c5lb2k15am8v2" path="res://game/player/scripts/player.gd" id="1_8rgu7"]
 [ext_resource type="Script" uid="uid://dmftpqkaar6xf" path="res://game/player/scripts/view.gd" id="2_0y2m0"]
 [ext_resource type="PackedScene" uid="uid://ctbwrka5haane" path="res://game/player/visuals/model/player_model.tscn" id="2_oxgld"]
 [ext_resource type="Script" uid="uid://qg3yv70xkg5l" path="res://game/player/scripts/states/OnGround/player_state_idle.gd" id="3_jtm0w"]
-[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://addons/thirdControllerPersonTest/scenes/system/user_interface.tscn" id="3_thab2"]
 [ext_resource type="Script" uid="uid://bd4hnvm3p47ow" path="res://game/player/scripts/states/OnGround/player_state_walking.gd" id="4_ixhdd"]
 [ext_resource type="Script" uid="uid://bxelfsdmc71rj" path="res://game/player/scripts/states/OnGround/player_state_running.gd" id="5_mgo4a"]
 [ext_resource type="Script" uid="uid://cerjlpj6qylj7" path="res://game/player/scripts/states/OnGround/player_state_sprinting.gd" id="6_wpknl"]
@@ -16,15 +15,18 @@
 radius = 0.25262
 height = 1.6
 
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ye53c"]
+nodes/output/position = Vector2(740, 220)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_a61ly"]
 radius = 0.07
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ye53c"]
-graph_offset = Vector2(221.613, 133.1)
-nodes/output/position = Vector2(740, 220)
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8rgu7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80391, 0)
+shape = SubResource("CapsuleShape3D_wole8")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("13_1duel")
@@ -45,12 +47,17 @@ script = ExtResource("6_wpknl")
 [node name="PlayerStateAttackGround" type="Node" parent="StateMachine"]
 script = ExtResource("7_083rv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80391, 0)
-shape = SubResource("CapsuleShape3D_wole8")
-
 [node name="visuals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-06, 0.00544906, 5.14984e-05)
+
+[node name="Model" type="Node3D" parent="visuals"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+
+[node name="Armature" type="Node3D" parent="visuals/Model"]
+transform = Transform3D(0.89, 0, 0, 0, -3.89031e-08, -0.89, 0, 0.89, -3.89031e-08, 0, 0.997928, 0)
+
+[node name="playerModel" parent="visuals/Model/Armature" instance=ExtResource("2_oxgld")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0790607, 0.276245, -0.0280719)
@@ -58,14 +65,16 @@ light_color = Color(0, 0.853884, 0.914346, 1)
 omni_range = 3.163
 omni_attenuation = 0.420448
 
-[node name="mixamo_base" type="Node3D" parent="visuals"]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="visuals"]
+root_node = NodePath("../Model/Armature/playerModel")
+libraries = {
+&"PlayerMovement": ExtResource("11_083rv")
+}
 
-[node name="Armature" type="Node3D" parent="visuals/mixamo_base"]
-transform = Transform3D(0.89, 0, 0, 0, -3.89031e-08, -0.89, 0, 0.89, -3.89031e-08, 0, 0, 0)
-
-[node name="playerP" parent="visuals/mixamo_base/Armature" instance=ExtResource("2_oxgld")]
-transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
+[node name="AnimationTree" type="AnimationTree" parent="visuals"]
+root_node = NodePath("../Model/Armature/playerModel")
+tree_root = SubResource("AnimationNodeBlendTree_ye53c")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="View" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3147, 0)
@@ -81,16 +90,3 @@ spring_length = 2.0
 [node name="Camera3D" type="Camera3D" parent="View/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 0.987223, 0.159347, 0, -0.159347, 0.987223, 0, 0.606042, 2.17217)
 current = true
-
-[node name="fpsCount" parent="." instance=ExtResource("3_thab2")]
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../visuals/mixamo_base/Armature/playerP")
-tree_root = SubResource("AnimationNodeBlendTree_ye53c")
-anim_player = NodePath("../AnimationPlayer")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../visuals/mixamo_base/Armature/playerP")
-libraries = {
-&"PlayerMovement": ExtResource("11_083rv")
-}

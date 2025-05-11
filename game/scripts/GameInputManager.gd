@@ -3,6 +3,8 @@ extends Node
 # Constantes para botones específicos
 const JOY_L_SHOULDER = JOY_BUTTON_LEFT_SHOULDER
 const JOY_R_SHOULDER = JOY_BUTTON_RIGHT_SHOULDER
+const JOY_R_TRIGGER = JOY_BUTTON_RIGHT_SHOULDER + 2  # JOY_BUTTON_R2 (ZR en Switch)
+const JOY_L_TRIGGER = JOY_BUTTON_LEFT_SHOULDER + 2   # JOY_BUTTON_L2 (ZL en Switch)
 
 # Mapeo de teclas para teclado
 const KEYBOARD_MAPPING = {
@@ -12,7 +14,9 @@ const KEYBOARD_MAPPING = {
 	"right": KEY_D,
 	"jump": KEY_SPACE,
 	"attack": KEY_F,
-	"interact": KEY_E
+	"interact": KEY_E,
+	"sprint": KEY_SHIFT,
+	"walking_mode": KEY_CTRL  # Tecla para cambiar entre modo caminar/correr
 }
 
 # Mapeo de botones para joystick (compatible con múltiples controles)
@@ -20,7 +24,8 @@ const JOYPAD_MAPPING = {
 	"jump": JOY_BUTTON_A,     # Botón A en Xbox, B en Nintendo Switch
 	"attack": JOY_BUTTON_X,   # Botón X en Xbox, Y en Nintendo Switch
 	"interact": JOY_BUTTON_B, # Botón B en Xbox, A en Nintendo Switch
-	"pause": JOY_BUTTON_START
+	"pause": JOY_BUTTON_START,
+	"sprint": JOY_R_TRIGGER,  # ZR en Switch, R2 en PlayStation, RT en Xbox
 }
 
 # Mapeo para Nintendo Switch (para referencia)
@@ -31,6 +36,16 @@ const SWITCH_MAPPING = {
 	"special": JOY_BUTTON_X   # X en Nintendo Switch (equivale a Y en Xbox)
 }
 
+# Configuración de sensibilidad
+@export_group("Keyboard Settings")
+@export var mouse_sensitivity_horizontal := 0.15
+@export var mouse_sensitivity_vertical := 0.15
+
+@export_group("Control Settings")
+@export var controller_run_threshold := 0.6  # Umbral para activar el correr con stick
+@export var controller_sensitivity_horizontal := 0.08
+@export var controller_sensitivity_vertical := -0.08
+
 var Player1 : PlayerInput = null
 var Player2 : PlayerInput = null
 var assigning := false
@@ -38,8 +53,8 @@ var current_assignment := 0
 var keyboard_assigned := false
 var debug_input := false
 var mouse_captured := false
-var mouse_sensitivity := 0.3
 var mouse_movement := Vector2.ZERO
+var walking_mode := false  # Variable global para el modo caminar
 
 func _ready():
 	# Detectar dispositivos al inicio
@@ -63,11 +78,6 @@ func _detect_controller_type(device_id: int):
 	
 	if "nintendo" in device_name or "switch" in device_name:
 		print("  - Detectado control de Nintendo Switch para dispositivo ID:", device_id)
-		print("  - NOTA: Para controles de Switch, los botones están invertidos respecto a Xbox/PlayStation.")
-		print("    * A en Switch = B en Xbox")
-		print("    * B en Switch = A en Xbox")
-		print("    * X en Switch = Y en Xbox")
-		print("    * Y en Switch = X en Xbox")
 
 func _on_joy_connection_changed(device_id: int, connected: bool):
 	if connected:
@@ -104,12 +114,23 @@ func _process(_delta):
 		if Input.is_action_just_pressed("ui_cancel"):
 			_toggle_mouse_capture()
 			
+		# Verificar cambio de modo caminar/correr
+		_check_walking_mode_toggle()
+			
 		# Modo de juego - Debug de inputs
 		if debug_input:
 			_debug_inputs()
 			
 		# Resetear el movimiento del ratón cada frame para evitar acumulación
 		mouse_movement = Vector2.ZERO
+
+# Función para comprobar cambio del modo caminar
+func _check_walking_mode_toggle():
+	# Comprobar si algún jugador presiona la tecla de modo caminar
+	if (Player1 and Player1.is_button_just_pressed("walking_mode")) or \
+	   (Player2 and Player2.is_button_just_pressed("walking_mode")):
+		walking_mode = !walking_mode
+		print("Modo caminar: ", "ACTIVADO" if walking_mode else "DESACTIVADO")
 
 # Función para depurar inputs de ambos jugadores
 func _debug_inputs():
@@ -156,12 +177,14 @@ func _debug_inputs():
 func assign_keyboard():
 	if current_assignment == 1:
 		Player1 = PlayerInput.new("keyboard", -1)
+		Player1.set_run_threshold(controller_run_threshold) # Pasar el valor desde el manager
 		keyboard_assigned = true
 		print("Jugador 1 asignado al teclado")
 		current_assignment = 2
 		print("Jugador 2: Presiona Q+E (teclado) o L+R (mando)")
 	elif current_assignment == 2 and not keyboard_assigned:
 		Player2 = PlayerInput.new("keyboard", -1)
+		Player2.set_run_threshold(controller_run_threshold) # Pasar el valor desde el manager
 		keyboard_assigned = true
 		print("Jugador 2 asignado al teclado")
 		finish_assignment()
@@ -174,11 +197,13 @@ func assign_joypad(device_id: int):
 	
 	if current_assignment == 1:
 		Player1 = PlayerInput.new("joypad", device_id)
+		Player1.set_run_threshold(controller_run_threshold) # Pasar el valor desde el manager
 		print("Jugador 1 asignado al control ID:", device_id, " (", Input.get_joy_name(device_id), ")")
 		current_assignment = 2
 		print("Jugador 2: Presiona Q+E (teclado) o L+R (mando)")
 	elif current_assignment == 2:
 		Player2 = PlayerInput.new("joypad", device_id)
+		Player2.set_run_threshold(controller_run_threshold) # Pasar el valor desde el manager
 		print("Jugador 2 asignado al control ID:", device_id, " (", Input.get_joy_name(device_id), ")")
 		finish_assignment()
 
@@ -190,11 +215,13 @@ func finish_assignment():
 	# Imprimir configuración final
 	if Player1:
 		print("Jugador 1:", Player1.type, "ID:", Player1.device_id)
+		Player1.player_number = 1
 		# Si el jugador 1 usa teclado, capturar el ratón
 		if Player1.type == "keyboard":
 			_capture_mouse()
 	if Player2:
 		print("Jugador 2:", Player2.type, "ID:", Player2.device_id)
+		Player2.player_number = 2
 		# Si el jugador 2 usa teclado y el jugador 1 no, capturar el ratón
 		if Player2.type == "keyboard" and (Player1 == null or Player1.type != "keyboard"):
 			_capture_mouse()
@@ -227,17 +254,28 @@ func _toggle_mouse_capture():
 		mouse_captured = true
 		print("Ratón capturado - Juego reanudado")
 
+# Función para comprobar si está en modo caminar
+func is_walking_mode() -> bool:
+	return walking_mode
+
 # Clase para gestionar entrada de jugadores
 class PlayerInput:
 	var type: String
 	var device_id: int
+	var player_number := 0  # 1 para jugador 1, 2 para jugador 2
 	var previous_buttons := {}
 	var previous_axes := {}
 	var deadzone := 0.2  # Valor configurable para la zona muerta
+	var stick_magnitude := 0.0  # Guarda la intensidad del stick para comprobar corriendo
+	var run_threshold := 0.6  # Valor por defecto, se actualizará desde el manager
 	
 	func _init(input_type: String, id: int):
 		type = input_type
 		device_id = id
+	
+	# Setter para el umbral de carrera
+	func set_run_threshold(threshold: float) -> void:
+		run_threshold = threshold
 	
 	# Obtener vector de dirección del movimiento (joystick izquierdo/WASD)
 	func get_direction() -> Vector2:
@@ -253,6 +291,9 @@ class PlayerInput:
 				direction.y += 1
 			if Input.is_key_pressed(KEYBOARD_MAPPING["up"]):
 				direction.y -= 1
+			
+			# Para teclado, la magnitud siempre es 0 o 1
+			stick_magnitude = direction.length()
 		
 		elif type == "joypad":
 			# OPTIMIZACIÓN: Usar un enfoque similar a Input.get_vector para mayor precisión
@@ -261,22 +302,30 @@ class PlayerInput:
 				Input.get_joy_axis(device_id, JOY_AXIS_LEFT_Y)
 			)
 			
+			# Guardar la magnitud del stick (sin aplicar deadzone) para verificar corriendo
+			stick_magnitude = raw_input.length()
+			
 			# Aplicar deadzone radial (como lo hace Input.get_vector)
-			var input_length = raw_input.length()
-			if input_length > deadzone:
+			if stick_magnitude > deadzone:
 				# Normalizar y ajustar la magnitud considerando la deadzone
-				direction = raw_input * ((input_length - deadzone) / (1.0 - deadzone)) / input_length
+				direction = raw_input * ((stick_magnitude - deadzone) / (1.0 - deadzone)) / stick_magnitude
+			else:
+				stick_magnitude = 0.0
 			
 			# D-pad digital (valores exactos)
 			if Input.is_joy_button_pressed(device_id, JOY_BUTTON_DPAD_RIGHT):
 				direction.x = 1.0
+				stick_magnitude = 1.0
 			elif Input.is_joy_button_pressed(device_id, JOY_BUTTON_DPAD_LEFT):
 				direction.x = -1.0
+				stick_magnitude = 1.0
 			
 			if Input.is_joy_button_pressed(device_id, JOY_BUTTON_DPAD_DOWN):
 				direction.y = 1.0
+				stick_magnitude = 1.0
 			elif Input.is_joy_button_pressed(device_id, JOY_BUTTON_DPAD_UP):
 				direction.y = -1.0
+				stick_magnitude = 1.0
 		
 		# Normalizar si es necesario
 		if direction.length() > 1.0:
@@ -329,6 +378,19 @@ class PlayerInput:
 			if action in JOYPAD_MAPPING:
 				return Input.is_joy_button_pressed(device_id, JOYPAD_MAPPING[action])
 		return false
+		
+	# Verificar si el stick está lo suficientemente inclinado para correr
+	func should_run() -> bool:
+		# Si el modo caminar está activado, nunca correr
+		if GameInputManager.walking_mode:
+			return false
+			
+		# Si se presiona sprint, siempre retorna true
+		if is_button_pressed("sprint"):
+			return true
+			
+		# De lo contrario, verificar la inclinación del stick usando el umbral definido
+		return stick_magnitude >= run_threshold
 	
 	# Verificar si un botón acaba de ser presionado (solo un frame)
 	func is_button_just_pressed(action: String) -> bool:

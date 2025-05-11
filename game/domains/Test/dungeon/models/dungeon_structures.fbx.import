@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cw2kkg6p2fnak"
-path="res://.godot/imported/dungeon_structures.fbx-97b74361cc51377f590801904d5efe63.scn"
+path="res://.godot/imported/dungeon_structures.fbx-cfb57557ae02a99c9af2b0b4ed4b15c8.scn"
 
 [deps]
 
-source_file="res://game/levels/test/dungeon/models/dungeon_structures.fbx"
-dest_files=["res://.godot/imported/dungeon_structures.fbx-97b74361cc51377f590801904d5efe63.scn"]
+source_file="res://game/domains/Test/dungeon/models/dungeon_structures.fbx"
+dest_files=["res://.godot/imported/dungeon_structures.fbx-cfb57557ae02a99c9af2b0b4ed4b15c8.scn"]
 
 [params]
 
