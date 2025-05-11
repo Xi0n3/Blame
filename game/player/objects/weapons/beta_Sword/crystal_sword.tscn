@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwcuxs2t3wiqy"]
+
+[ext_resource type="PackedScene" uid="uid://8548hwvl5ecc" path="res://game/player/objects/weapons/beta_Sword/Crystal Sword.fbx" id="1_ukd5j"]
+
+[node name="Crystal Sword" instance=ExtResource("1_ukd5j")]

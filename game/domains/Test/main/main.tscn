@@ -234,7 +234,13 @@ size = Vector2i(1280, 358)
 render_target_update_mode = 4
 
 [node name="Sol" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("16_hbmcl")]
-transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 15.6787, 0.603868, -9.88386)
+transform = Transform3D(-0.784993, 0, -0.619506, 0, 1, 0, 0.619506, 0, -0.784993, 7.697, 0.603868, -13.1046)
 jugador_id = 1
 
+[node name="OmniLight3D" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals" index="1"]
+light_color = Color(0.833613, 0.769715, 0, 1)
+
 [node name="fpsCount" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("17_yp5ar")]
+
+[editable path="GridContainer/SubViewportContainer2/SubViewport/Sol"]
+[editable path="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals/Model/Armature/playerModel"]

@@ -3,8 +3,9 @@ extends Node
 # Constantes para botones específicos
 const JOY_L_SHOULDER = JOY_BUTTON_LEFT_SHOULDER
 const JOY_R_SHOULDER = JOY_BUTTON_RIGHT_SHOULDER
-const JOY_R_TRIGGER = JOY_BUTTON_RIGHT_SHOULDER + 2  # JOY_BUTTON_R2 (ZR en Switch)
-const JOY_L_TRIGGER = JOY_BUTTON_LEFT_SHOULDER + 2   # JOY_BUTTON_L2 (ZL en Switch)
+# Constantes para los ejes de los triggers
+const JOY_AXIS_R_TRIGGER = JOY_AXIS_TRIGGER_RIGHT  # ZR en Switch, R2 en PlayStation
+const JOY_AXIS_L_TRIGGER = JOY_AXIS_TRIGGER_LEFT   # ZL en Switch, L2 en PlayStation
 
 # Mapeo de teclas para teclado
 const KEYBOARD_MAPPING = {
@@ -25,8 +26,17 @@ const JOYPAD_MAPPING = {
 	"attack": JOY_BUTTON_X,   # Botón X en Xbox, Y en Nintendo Switch
 	"interact": JOY_BUTTON_B, # Botón B en Xbox, A en Nintendo Switch
 	"pause": JOY_BUTTON_START,
-	"sprint": JOY_R_TRIGGER,  # ZR en Switch, R2 en PlayStation, RT en Xbox
+	# Sprint ya no se mapea aquí como botón, ahora es un eje
 }
+
+# Mapeo de ejes analógicos
+const JOYPAD_AXIS_MAPPING = {
+	"sprint": JOY_AXIS_R_TRIGGER,  # ZR en Switch, R2 en PlayStation
+	"secondary": JOY_AXIS_L_TRIGGER # ZL en Switch, L2 en PlayStation
+}
+
+# Umbral para considerar un trigger presionado (valor entre 0 y 1)
+const TRIGGER_THRESHOLD = 0.5
 
 # Mapeo para Nintendo Switch (para referencia)
 const SWITCH_MAPPING = {
@@ -46,12 +56,14 @@ const SWITCH_MAPPING = {
 @export var controller_sensitivity_horizontal := 0.08
 @export var controller_sensitivity_vertical := -0.08
 
+@export_group("debug")
+@export var debug_input := false
+
 var Player1 : PlayerInput = null
 var Player2 : PlayerInput = null
 var assigning := false
 var current_assignment := 0
 var keyboard_assigned := false
-var debug_input := false
 var mouse_captured := false
 var mouse_movement := Vector2.ZERO
 var walking_mode := false  # Variable global para el modo caminar
@@ -143,9 +155,15 @@ func _debug_inputs():
 		if cam_dir.length() > 0.1:
 			print("Jugador 1 [", Player1.type, " ID:", Player1.device_id, "] - Cámara:", cam_dir)
 		
+		# Debug de botones
 		for action in JOYPAD_MAPPING:
 			if Player1.is_button_just_pressed(action):
 				print("Jugador 1 [", Player1.type, " ID:", Player1.device_id, "] - Acción:", action)
+		
+		# Debug de ejes analógicos (triggers)
+		for action in JOYPAD_AXIS_MAPPING:
+			if Player1.is_axis_active(action):
+				print("Jugador 1 [", Player1.type, " ID:", Player1.device_id, "] - Acción:", action, " - Valor:", Player1.get_axis_value(action))
 				
 		# Debug de valores RAW de los ejes (para verificar sensibilidad)
 		if Player1.type == "joypad":
@@ -153,6 +171,14 @@ func _debug_inputs():
 			var raw_y = Input.get_joy_axis(Player1.device_id, JOY_AXIS_LEFT_Y)
 			if abs(raw_x) > 0.05 or abs(raw_y) > 0.05:
 				print("Jugador 1 - RAW joystick:", Vector2(raw_x, raw_y))
+				
+			# Debug de valores de los triggers
+			var rt_value = Input.get_joy_axis(Player1.device_id, JOY_AXIS_R_TRIGGER)
+			var lt_value = Input.get_joy_axis(Player1.device_id, JOY_AXIS_L_TRIGGER)
+			if rt_value > 0.05:
+				print("Jugador 1 - Trigger derecho (ZR/R2):", rt_value)
+			if lt_value > 0.05:
+				print("Jugador 1 - Trigger izquierdo (ZL/L2):", lt_value)
 	
 	if Player2:
 		var dir = Player2.get_direction()
@@ -163,9 +189,15 @@ func _debug_inputs():
 		if cam_dir.length() > 0.1:
 			print("Jugador 2 [", Player2.type, " ID:", Player2.device_id, "] - Cámara:", cam_dir)
 		
+		# Debug de botones
 		for action in JOYPAD_MAPPING:
 			if Player2.is_button_just_pressed(action):
 				print("Jugador 2 [", Player2.type, " ID:", Player2.device_id, "] - Acción:", action)
+		
+		# Debug de ejes analógicos (triggers)
+		for action in JOYPAD_AXIS_MAPPING:
+			if Player2.is_axis_active(action):
+				print("Jugador 2 [", Player2.type, " ID:", Player2.device_id, "] - Acción:", action, " - Valor:", Player2.get_axis_value(action))
 				
 		# Debug de valores RAW de los ejes (para verificar sensibilidad)
 		if Player2.type == "joypad":
@@ -173,6 +205,14 @@ func _debug_inputs():
 			var raw_y = Input.get_joy_axis(Player2.device_id, JOY_AXIS_LEFT_Y)
 			if abs(raw_x) > 0.05 or abs(raw_y) > 0.05:
 				print("Jugador 2 - RAW joystick:", Vector2(raw_x, raw_y))
+				
+			# Debug de valores de los triggers
+			var rt_value = Input.get_joy_axis(Player2.device_id, JOY_AXIS_R_TRIGGER)
+			var lt_value = Input.get_joy_axis(Player2.device_id, JOY_AXIS_L_TRIGGER)
+			if rt_value > 0.05:
+				print("Jugador 2 - Trigger derecho (ZR/R2):", rt_value)
+			if lt_value > 0.05:
+				print("Jugador 2 - Trigger izquierdo (ZL/L2):", lt_value)
 
 func assign_keyboard():
 	if current_assignment == 1:
@@ -375,19 +415,31 @@ class PlayerInput:
 			if action in KEYBOARD_MAPPING:
 				return Input.is_key_pressed(KEYBOARD_MAPPING[action])
 		elif type == "joypad":
+			# Para botones regulares
 			if action in JOYPAD_MAPPING:
 				return Input.is_joy_button_pressed(device_id, JOYPAD_MAPPING[action])
+			# Para ejes analógicos (triggers)
+			elif action in JOYPAD_AXIS_MAPPING:
+				return Input.get_joy_axis(device_id, JOYPAD_AXIS_MAPPING[action]) > TRIGGER_THRESHOLD
 		return false
+	
+	# Nueva función para verificar si un eje está activo
+	func is_axis_active(action: String) -> bool:
+		if type == "joypad" and action in JOYPAD_AXIS_MAPPING:
+			return Input.get_joy_axis(device_id, JOYPAD_AXIS_MAPPING[action]) > TRIGGER_THRESHOLD
+		return false
+	
+	# Nueva función para obtener el valor de un eje
+	func get_axis_value(action: String) -> float:
+		if type == "joypad" and action in JOYPAD_AXIS_MAPPING:
+			return Input.get_joy_axis(device_id, JOYPAD_AXIS_MAPPING[action])
+		return 0.0
 		
 	# Verificar si el stick está lo suficientemente inclinado para correr
 	func should_run() -> bool:
 		# Si el modo caminar está activado, nunca correr
-		if GameInputManager.walking_mode:
+		if GameInputManager.walking_mode && type == "keyboard":
 			return false
-			
-		# Si se presiona sprint, siempre retorna true
-		if is_button_pressed("sprint"):
-			return true
 			
 		# De lo contrario, verificar la inclinación del stick usando el umbral definido
 		return stick_magnitude >= run_threshold
