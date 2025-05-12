@@ -1,14 +1,17 @@
-[gd_scene load_steps=29 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=35 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/textures/grids/Orange/texture_09.png" id="2_i10sp"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://game/domains/Test/main/textures/grids/Purple/texture_09.png" id="3_o0ar1"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://game/domains/Test/main/textures/grids/Green/texture_09.png" id="4_463pv"]
 [ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://game/domains/Test/main/decoraciones/closet_medium.tscn" id="5_h8s54"]
+[ext_resource type="Texture2D" uid="uid://r4uqvwic7khq" path="res://game/domains/Test/main/textures/grids/Purple/texture_06.png" id="5_ig2si"]
 [ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://game/domains/Test/main/decoraciones/closet_small.tscn" id="6_oh1vt"]
+[ext_resource type="Texture2D" uid="uid://chfn1iyg8h86w" path="res://game/domains/Test/main/textures/grids/Light/texture_09.png" id="6_rydj3"]
 [ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/decoraciones/crate.tscn" id="7_ig2si"]
 [ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/decoraciones/tall_stool.tscn" id="8_rydj3"]
 [ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/decoraciones/chair.tscn" id="9_jvslr"]
+[ext_resource type="Script" uid="uid://iqns65se82k" path="res://game/mechanics/DungeonStateSwitch/energy_object.gd" id="9_oh1vt"]
 [ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/decoraciones/stool.tscn" id="10_0om4d"]
 [ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/decoraciones/table.tscn" id="11_c8x31"]
 [ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/decoraciones/barrel.tscn" id="12_r5heq"]
@@ -21,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bbscko7vnk4iw" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorLunar.tscn" id="18_o0ar1"]
 [ext_resource type="PackedScene" uid="uid://cvh27v2jqhewc" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorSolar.tscn" id="19_463pv"]
 [ext_resource type="PackedScene" uid="uid://dlgrtnsnxia11" path="res://game/mechanics/DungeonStateSwitch/manager/dungeonStateSwitchManager.tscn" id="21_h8s54"]
+[ext_resource type="PackedScene" uid="uid://bikloun7pmer8" path="res://game/mechanics/DungeonStateSwitch/energy_object/wall.tscn" id="25_jvslr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
 sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
@@ -64,6 +68,12 @@ uv1_triplanar = true
 albedo_texture = ExtResource("4_463pv")
 uv2_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rydj3"]
+albedo_texture = ExtResource("5_ig2si")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvslr"]
+albedo_texture = ExtResource("6_rydj3")
+
 [node name="world" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -88,10 +98,10 @@ material_override = SubResource("StandardMaterial3D_ji57p")
 use_collision = true
 
 [node name="box2" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.274513, 0, -0.961583, 0, 1, 0, 0.961583, 0, 0.274513, 4.00976, 1.4814, -4.15137)
+transform = Transform3D(-0.414089, 0, -0.910236, 0, 1, 0, 0.910236, 0, -0.414089, 3.71662, 1.09328, -3.7523)
 material_override = SubResource("StandardMaterial3D_jlqog")
 use_collision = true
-size = Vector3(2, 2, 2)
+size = Vector3(3.52148, 1.22375, 2)
 
 [node name="box3" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.959186, 0, 0.282777, 0, 1, 0, -0.282777, 0, 0.959186, 4.11051, 1.98557, 4.1643)
@@ -104,6 +114,17 @@ transform = Transform3D(9.37508, 1.76475, -0.0217241, 0.27238, 11.9644, 0.140817
 material_override = SubResource("StandardMaterial3D_oi22d")
 use_collision = true
 size = Vector3(3, 3, 3)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30392, 1.86215, 5.78893)
+use_collision = true
+radius = 1.145
+material = SubResource("StandardMaterial3D_rydj3")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.713023, -5.50024)
+material_override = SubResource("StandardMaterial3D_jvslr")
+use_collision = true
 
 [node name="decoraciones" type="Node3D" parent="."]
 
@@ -199,6 +220,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6283, 0.523618, -3.09478)
 
 [node name="closet_large" parent="decoraciones" instance=ExtResource("14_4qyl6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55375, 0.5, -4.41831)
+script = ExtResource("9_oh1vt")
 
 [node name="TestDungeon" parent="." instance=ExtResource("15_1ekqo")]
 transform = Transform3D(0.842283, 0, -0.539035, 0, 1, 0, 0.539035, 0, 0.842283, 0, 0.488828, -19.687)
@@ -251,9 +273,18 @@ offset_bottom = 55.0
 [node name="actuator" parent="." instance=ExtResource("18_o0ar1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.044, 1.225, -10.928)
 
+[node name="actuator4" parent="." instance=ExtResource("18_o0ar1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.40817, 1.225, -10.928)
+
 [node name="actuator2" parent="." instance=ExtResource("19_463pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9701, 1.22481, -13.1876)
 
+[node name="actuator3" parent="." instance=ExtResource("19_463pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9267, 1.22481, -13.1876)
+
 [node name="DungeonStateSwitchManager" parent="." instance=ExtResource("21_h8s54")]
+
+[node name="Wall" parent="." instance=ExtResource("25_jvslr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67138, 2.03441, -12.082)
 
 [editable path="Astros/SubViewportContainer2/SubViewport/fpsCount"]

@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1kshrbwhaowu" path="res://game/domains/Test/main/decoraciones/textures/closet_large_closet_albedo.png" id="1_u1grc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ms6s6"]
-resource_name = "closet"
-cull_mode = 2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rivmi"]
 albedo_texture = ExtResource("1_u1grc")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l1jdp"]
@@ -29,7 +27,6 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 408,
 "index_data": PackedByteArray("DgBHAAoADgBLAEcABQAjAAEABQBCACMAEgA2ABQAEgAuADYAAgBJAAwAAgAkAEkAFgADAA0AFgAaAAMAFQAPAAsAFQAYAA8AEQAJAAcAEQATAAkAGQAEAAAAGQAQAAQAFwBPABsAFwA/AE8ACABDAAYACABFAEMAGwAuABIAGwBPAC4AFAA/ABcAFAA2AD8AIgApACYAIgBBACkARAAyACoARABGADIASAA9ADQASABMAD0ASgAnADsASgAlACcAHQA4AC8AHQAgADgAMwAoACsAMwA8ACgAHwAsAE0AHwAcACwAHgA1AC0AHgAwADUAMQBAADcAMQA6AEAAOQBOAD4AOQAhAE4AUABYAFMAUABVAFgAVwBiAFkAVwBgAGIAYQBeAGMAYQBcAF4AWwBUAF0AWwBSAFQAVgBaAF8AVgBRAFoAZABsAGcAZABpAGwAawB2AG0AawB0AHYAdQByAHcAdQBwAHIAbwBoAHEAbwBmAGgAagBuAHMAagBlAG4AeACAAHsAeAB9AIAAfwCKAIEAfwCIAIoAiQCGAIsAiQCEAIYAgwB8AIUAgwB6AHwAfgCCAIcAfgB5AIIAjACUAI8AjACRAJQAkwCeAJUAkwCcAJ4AnQCaAJ8AnQCYAJoAlwCQAJkAlwCOAJAAkgCWAJsAkgCNAJYAqQDGAKYAqQDJAMYApAC1AKEApADEALUAoQDJAKkAoQC1AMkAsACiAKoAsACzAKIArwCrAKgArwCxAKsArQCnAKUArQCuAKcAsgCjAKAAsgCsAKMApgDEAKQApgDGAMQAtAC6ALcAtADDALoAxQC9ALsAxQDHAL0AyADCAL8AyADLAMIAygC4AMAAygC2ALgAvgC5ALwAvgDBALkA1QDyANIA1QD1APIA0ADhAM0A0ADwAOEAzQD1ANUAzQDhAPUA3ADOANYA3ADfAM4A2wDXANQA2wDdANcA2QDTANEA2QDaANMA3gDPAMwA3gDYAM8A0gDwANAA0gDyAPAA4ADmAOMA4ADvAOYA8QDpAOcA8QDzAOkA9ADuAOsA9AD3AO4A9gDkAOwA9gDiAOQA6gDlAOgA6gDtAOUA"),
-"material": SubResource("StandardMaterial3D_ms6s6"),
 "name": "closet",
 "primitive": 3,
 "uv_scale": Vector4(1.97495, 3.81255, 0, 0),
@@ -45,6 +42,7 @@ size = Vector3(1.2, 1.8, 0.7)
 [node name="closet_large" type="StaticBody3D"]
 
 [node name="closet_large" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_rivmi")
 mesh = SubResource("ArrayMesh_qjlej")
 skeleton = NodePath("")
 

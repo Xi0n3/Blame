@@ -6,6 +6,7 @@ var typeEnergy := 0  # 0 = Lunar, 1 = Solar
 signal actuator_triggered(attacker, actuator)
 
 @onready var item_box = $"actuatorModel/item-box"
+@onready var light: OmniLight3D = $actuatorModel/OmniLight3D
 @onready var area = $Area3D
 
 # Rotación por segundo
@@ -28,8 +29,21 @@ func _on_area_entered(area):
 		if area.get("wielder") != null:
 			attacker = area.wielder
 		
-		emit_signal("actuator_triggered", attacker, self)
-		
+		# Verificar compatibilidad de energías
+		if attacker:
+			if (typeEnergy == 0 and attacker.jugador_id == 0) or (typeEnergy == 1 and attacker.jugador_id == 1):
+				# Energías compatibles - emitir señal
+				emit_signal("actuator_triggered", attacker, self)
+				print("activado huacahuaca, atacante: ", attacker)
+			else:
+				# Energías incompatibles - mostrar mensaje de bloqueo
+				print("Bloqueado: Energías incompatibles")
+				if typeEnergy == 0:
+					print("Este actuador requiere energía Lunar")
+				else:
+					print("Este actuador requiere energía Solar")
+		else:
+			print("No se detectó atacante válido")
 		
 #Receptor
 #func _on_actuator_triggered(attacker, actuator):
