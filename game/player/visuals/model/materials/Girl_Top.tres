@@ -7,3 +7,4 @@ resource_name = "Girl_Top"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_5bkv0")
 emission_enabled = true
+distance_fade_max_distance = 0.5

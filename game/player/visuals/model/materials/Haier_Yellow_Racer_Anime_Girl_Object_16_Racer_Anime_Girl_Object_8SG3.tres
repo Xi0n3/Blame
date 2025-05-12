@@ -5,3 +5,5 @@ resource_name = "Haier:Racer_Anime_Girl_Object_16_Racer_Anime_Girl_Object_8SG3"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.905161, 0.862069, 7.70092e-07, 1)
 emission_enabled = true
+emission = Color(0.294638, 3.21874e-07, 8.42288e-08, 1)
+emission_energy_multiplier = 3.0

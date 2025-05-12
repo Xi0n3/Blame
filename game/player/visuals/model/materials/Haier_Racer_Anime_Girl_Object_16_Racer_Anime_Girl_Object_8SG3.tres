@@ -4,11 +4,10 @@
 resource_local_to_scene = true
 resource_name = "Haier:Racer_Anime_Girl_Object_16_Racer_Anime_Girl_Object_8SG3"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0, 1, 1, 1)
+albedo_color = Color(0.0313726, 0.65098, 1, 1)
 emission_enabled = true
-emission = Color(0.16948, 0.460437, 0, 1)
-emission_energy_multiplier = 0.42
+emission = Color(2.82768e-07, 0.242965, 0.117236, 1)
+emission_energy_multiplier = 3.0
 rim = 0.0
 anisotropy = 1.0
-distance_fade_min_distance = 0.01
-distance_fade_max_distance = 2.0
+distance_fade_max_distance = 0.5

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2cjkldbfbutw"]
+
+[ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://game/player/player.tscn" id="1_hhmvl"]
+
+[node name="Luna" instance=ExtResource("1_hhmvl")]
+
+[editable path="visuals/Model/Armature/playerModel"]

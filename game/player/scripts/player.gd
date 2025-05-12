@@ -34,15 +34,12 @@ var input_ref = GameInputManager.Player1
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
 func _ready():
 	Engine.max_fps = 60;
 	
-	add_to_group("players")
 	if jugador_id == 1:
 		input_ref = GameInputManager.Player2
 		
-
 
 #Función para escuchar cualquier evento
 func _process(delta):

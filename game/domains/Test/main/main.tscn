@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=29 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/textures/grids/Orange/texture_09.png" id="2_i10sp"]
@@ -15,8 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://game/domains/Test/main/decoraciones/bench.tscn" id="13_oe7qi"]
 [ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://game/domains/Test/main/decoraciones/closet_large.tscn" id="14_4qyl6"]
 [ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeon/scenes/testDungeon.tscn" id="15_1ekqo"]
-[ext_resource type="PackedScene" uid="uid://c0ca0kn24curg" path="res://game/player/player.tscn" id="16_hbmcl"]
+[ext_resource type="PackedScene" uid="uid://c2cjkldbfbutw" path="res://game/player/Luna.tscn" id="16_463pv"]
 [ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://game/system/user_interface.tscn" id="17_yp5ar"]
+[ext_resource type="PackedScene" uid="uid://cmcug0stu3vp4" path="res://game/player/Sol.tscn" id="18_h8s54"]
+[ext_resource type="PackedScene" uid="uid://bbscko7vnk4iw" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorLunar.tscn" id="18_o0ar1"]
+[ext_resource type="PackedScene" uid="uid://cvh27v2jqhewc" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorSolar.tscn" id="19_463pv"]
+[ext_resource type="PackedScene" uid="uid://dlgrtnsnxia11" path="res://game/mechanics/DungeonStateSwitch/manager/dungeonStateSwitchManager.tscn" id="21_h8s54"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
 sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
@@ -199,54 +203,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55375, 0.5, -4.41831)
 [node name="TestDungeon" parent="." instance=ExtResource("15_1ekqo")]
 transform = Transform3D(0.842283, 0, -0.539035, 0, 1, 0, 0.539035, 0, 0.842283, 0, 0.488828, -19.687)
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Astros" type="GridContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="GridContainer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Astros"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Astros/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1280, 358)
 render_target_update_mode = 4
 
-[node name="Luna" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("16_hbmcl")]
-transform = Transform3D(-0.0789119, 0, 0.996882, 0, 1, 0, -0.996882, 0, -0.0789119, 13.8801, 0.603868, -9.88386)
+[node name="Luna" parent="Astros/SubViewportContainer/SubViewport" instance=ExtResource("16_463pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499807, -1.243)
 
-[node name="fpsCount" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("17_yp5ar")]
+[node name="fpsCount" parent="Astros/SubViewportContainer/SubViewport" instance=ExtResource("17_yp5ar")]
 
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Astros"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
+[node name="SubViewport" type="SubViewport" parent="Astros/SubViewportContainer2"]
 handle_input_locally = false
 size = Vector2i(1280, 358)
 render_target_update_mode = 4
 
-[node name="Sol" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("16_hbmcl")]
-transform = Transform3D(-0.784993, 0, -0.619506, 0, 1, 0, 0.619506, 0, -0.784993, 7.697, 0.603868, -13.1046)
-jugador_id = 1
+[node name="Sol" parent="Astros/SubViewportContainer2/SubViewport" instance=ExtResource("18_h8s54")]
+transform = Transform3D(-0.997965, 0, -0.063766, 0, 1, 0, 0.063766, 0, -0.997965, 0, 0.499413, -7.72066)
 
-[node name="Sword" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals/Model/Armature/playerModel/Armature/Skeleton3D/SwordAttachment" index="0"]
-transform = Transform3D(0.96069, -9.9533, 0.0965745, 9.87251, 0.965165, 1.26575, -1.26916, -0.0262567, 9.91911, 0.0048008, 0.00793236, 0.00193176)
+[node name="fpsCount" parent="Astros/SubViewportContainer2/SubViewport" instance=ExtResource("17_yp5ar")]
 
-[node name="CollisionShape3D" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals/Model/Armature/playerModel/Armature/Skeleton3D/SwordAttachment/Hitbox" index="0"]
-transform = Transform3D(0.995213, 0.0976202, -0.0046384, -0.0976593, 0.995178, -0.00911593, 0.00372613, 0.00952527, 0.999948, 0.038303, 0.00475378, 0.00167509)
+[node name="DebugPanel" parent="Astros/SubViewportContainer2/SubViewport/fpsCount" index="0"]
+offset_left = 1158.0
+offset_top = 15.0
+offset_right = 1267.0
+offset_bottom = 55.0
 
-[node name="OmniLight3D" parent="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals" index="1"]
-light_color = Color(0.833613, 0.769715, 0, 1)
+[node name="actuator" parent="." instance=ExtResource("18_o0ar1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.044, 1.225, -10.928)
 
-[node name="fpsCount" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("17_yp5ar")]
+[node name="actuator2" parent="." instance=ExtResource("19_463pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9701, 1.22481, -13.1876)
 
-[editable path="GridContainer/SubViewportContainer2/SubViewport/Sol"]
-[editable path="GridContainer/SubViewportContainer2/SubViewport/Sol/visuals/Model/Armature/playerModel"]
+[node name="DungeonStateSwitchManager" parent="." instance=ExtResource("21_h8s54")]
+
+[editable path="Astros/SubViewportContainer2/SubViewport/fpsCount"]

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dp3ud0vhgwf62"]
+
+[ext_resource type="Texture2D" uid="uid://bnavbvakij26m" path="res://game/mechanics/DungeonStateSwitch/actuator/models/Textures/colormap.png" id="1_h0o78"]
+
+[resource]
+resource_name = "colormap"
+albedo_texture = ExtResource("1_h0o78")
+emission = Color(0.399066, 0.533112, 0, 1)
+emission_energy_multiplier = 0.0
+refraction_scale = 0.99
+grow = true
+proximity_fade_distance = 0.01
+distance_fade_mode = 2
+distance_fade_max_distance = 0.5
