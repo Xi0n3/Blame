@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://yshyhwykopdf"]
+
+[ext_resource type="Script" uid="uid://iqns65se82k" path="res://game/mechanics/DungeonStateSwitch/energy_object.gd" id="1_ovao5"]
+[ext_resource type="PrismMesh" uid="uid://bhv1nupmc42qg" path="res://game/mechanics/DungeonStateSwitch/energy_object/stairs.tres" id="1_w8fb5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8fb5"]
+size = Vector3(2.974, 4.25, 0.106848)
+
+[node name="Stairs" type="StaticBody3D"]
+script = ExtResource("1_ovao5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_w8fb5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.0090332, -0.0332839, -0.0390239)
+shape = SubResource("BoxShape3D_w8fb5")

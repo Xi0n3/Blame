@@ -12,7 +12,6 @@ func start():
 func state_physics_process(delta):
 	super.state_physics_process(delta)
 	player.SPEED = player.walking_speed
-	
 	player.velocity.x = direction.x * player.SPEED
 	player.velocity.z = direction.z * player.SPEED
 	player.move_and_slide()

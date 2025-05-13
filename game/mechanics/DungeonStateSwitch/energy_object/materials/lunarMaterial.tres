@@ -5,3 +5,7 @@
 [resource]
 albedo_color = Color(0.113725, 1, 1, 1)
 albedo_texture = ExtResource("1_72wwv")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.4
+distance_fade_mode = 2
+distance_fade_max_distance = 0.7

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=36 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/textures/grids/Orange/texture_09.png" id="2_i10sp"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/decoraciones/crate.tscn" id="7_ig2si"]
 [ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/decoraciones/tall_stool.tscn" id="8_rydj3"]
 [ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/decoraciones/chair.tscn" id="9_jvslr"]
-[ext_resource type="Script" uid="uid://iqns65se82k" path="res://game/mechanics/DungeonStateSwitch/energy_object.gd" id="9_oh1vt"]
 [ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/decoraciones/stool.tscn" id="10_0om4d"]
 [ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/decoraciones/table.tscn" id="11_c8x31"]
 [ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/decoraciones/barrel.tscn" id="12_r5heq"]
@@ -24,7 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://bbscko7vnk4iw" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorLunar.tscn" id="18_o0ar1"]
 [ext_resource type="PackedScene" uid="uid://cvh27v2jqhewc" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorSolar.tscn" id="19_463pv"]
 [ext_resource type="PackedScene" uid="uid://dlgrtnsnxia11" path="res://game/mechanics/DungeonStateSwitch/manager/dungeonStateSwitchManager.tscn" id="21_h8s54"]
+[ext_resource type="PackedScene" uid="uid://yshyhwykopdf" path="res://game/mechanics/DungeonStateSwitch/energy_object/stairs.tscn" id="25_0om4d"]
 [ext_resource type="PackedScene" uid="uid://bikloun7pmer8" path="res://game/mechanics/DungeonStateSwitch/energy_object/wall.tscn" id="25_jvslr"]
+[ext_resource type="PackedScene" uid="uid://dbtofxeb3mx7y" path="res://game/mechanics/DungeonStateSwitch/energy_object/block.tscn" id="26_c8x31"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
 sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
@@ -220,7 +221,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6283, 0.523618, -3.09478)
 
 [node name="closet_large" parent="decoraciones" instance=ExtResource("14_4qyl6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55375, 0.5, -4.41831)
-script = ExtResource("9_oh1vt")
 
 [node name="TestDungeon" parent="." instance=ExtResource("15_1ekqo")]
 transform = Transform3D(0.842283, 0, -0.539035, 0, 1, 0, 0.539035, 0, 0.842283, 0, 0.488828, -19.687)
@@ -286,5 +286,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9267, 1.22481, -13.1876)
 
 [node name="Wall" parent="." instance=ExtResource("25_jvslr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67138, 2.03441, -12.082)
+typeEnergy = 1
+
+[node name="Wall2" parent="." instance=ExtResource("25_jvslr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.014, 2.03441, -9.35541)
+
+[node name="Wall3" parent="." instance=ExtResource("25_jvslr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6481, 2.03441, -15.5675)
+typeEnergy = 1
+
+[node name="Stairs" parent="." instance=ExtResource("25_0om4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.491, 2, -15.805)
+typeEnergy = 2
+
+[node name="Block" parent="." instance=ExtResource("26_c8x31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9707, 2, -15.7144)
+typeEnergy = 1
+
+[node name="Wall4" parent="." instance=ExtResource("25_jvslr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4486, 2, -8.69556)
+typeEnergy = 2
 
 [editable path="Astros/SubViewportContainer2/SubViewport/fpsCount"]

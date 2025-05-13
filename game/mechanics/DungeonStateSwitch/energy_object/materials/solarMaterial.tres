@@ -5,3 +5,5 @@
 [resource]
 albedo_color = Color(0.958898, 0.900348, 0, 1)
 albedo_texture = ExtResource("1_nxf42")
+distance_fade_mode = 2
+distance_fade_max_distance = 0.7

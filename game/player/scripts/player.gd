@@ -30,9 +30,9 @@ var JUMP_VELOCITY = jump_velocity
 var running =  false
 var is_locked = false
 var input_ref = GameInputManager.Player1
-
-
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
 
 func _ready():
 	Engine.max_fps = 60;
@@ -49,5 +49,9 @@ func _process(delta):
 		elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
+	## Add the gravity. TODO No debería estar aquí
+	velocity.y -= gravity * delta
+	
 func assign_input(input: GameInputManager.PlayerInput):
 	input_ref = input
+	
