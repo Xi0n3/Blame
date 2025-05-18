@@ -4,3 +4,4 @@
 
 [node name="DungeonStateSwitchManager" type="Node"]
 script = ExtResource("1_ae6gp")
+SignalWaitTime = 3

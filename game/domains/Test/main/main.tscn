@@ -1,26 +1,24 @@
-[gd_scene load_steps=36 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=34 format=3 uid="uid://bssm8p8a5megh"]
 
-[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
-[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/textures/grids/Orange/texture_09.png" id="2_i10sp"]
-[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://game/domains/Test/main/textures/grids/Purple/texture_09.png" id="3_o0ar1"]
-[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://game/domains/Test/main/textures/grids/Green/texture_09.png" id="4_463pv"]
-[ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://game/domains/Test/main/decoraciones/closet_medium.tscn" id="5_h8s54"]
-[ext_resource type="Texture2D" uid="uid://r4uqvwic7khq" path="res://game/domains/Test/main/textures/grids/Purple/texture_06.png" id="5_ig2si"]
-[ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://game/domains/Test/main/decoraciones/closet_small.tscn" id="6_oh1vt"]
-[ext_resource type="Texture2D" uid="uid://chfn1iyg8h86w" path="res://game/domains/Test/main/textures/grids/Light/texture_09.png" id="6_rydj3"]
-[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/decoraciones/crate.tscn" id="7_ig2si"]
-[ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/decoraciones/tall_stool.tscn" id="8_rydj3"]
-[ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/decoraciones/chair.tscn" id="9_jvslr"]
-[ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/decoraciones/stool.tscn" id="10_0om4d"]
-[ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/decoraciones/table.tscn" id="11_c8x31"]
-[ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/decoraciones/barrel.tscn" id="12_r5heq"]
-[ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://game/domains/Test/main/decoraciones/bench.tscn" id="13_oe7qi"]
-[ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://game/domains/Test/main/decoraciones/closet_large.tscn" id="14_4qyl6"]
-[ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeon/scenes/testDungeon.tscn" id="15_1ekqo"]
-[ext_resource type="PackedScene" uid="uid://c2cjkldbfbutw" path="res://game/player/Luna.tscn" id="16_463pv"]
-[ext_resource type="PackedScene" uid="uid://cvbijqf1jip23" path="res://game/system/user_interface.tscn" id="17_yp5ar"]
-[ext_resource type="PackedScene" uid="uid://cmcug0stu3vp4" path="res://game/player/Sol.tscn" id="18_h8s54"]
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
+[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Orange/texture_09.png" id="2_i10sp"]
+[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Purple/texture_09.png" id="3_o0ar1"]
+[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Green/texture_09.png" id="4_463pv"]
+[ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://game/domains/Test/main/Muebles/closet_medium.tscn" id="5_h8s54"]
+[ext_resource type="Texture2D" uid="uid://r4uqvwic7khq" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Purple/texture_06.png" id="5_ig2si"]
+[ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://game/domains/Test/main/Muebles/closet_small.tscn" id="6_oh1vt"]
+[ext_resource type="Texture2D" uid="uid://chfn1iyg8h86w" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Light/texture_09.png" id="6_rydj3"]
+[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/Muebles/crate.tscn" id="7_ig2si"]
+[ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/Muebles/tall_stool.tscn" id="8_rydj3"]
+[ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/Muebles/chair.tscn" id="9_jvslr"]
+[ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/Muebles/stool.tscn" id="10_0om4d"]
+[ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/Muebles/table.tscn" id="11_c8x31"]
+[ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/Muebles/barrel.tscn" id="12_r5heq"]
+[ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://game/domains/Test/main/Muebles/bench.tscn" id="13_oe7qi"]
+[ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://game/domains/Test/main/Muebles/closet_large.tscn" id="14_4qyl6"]
+[ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeonTest/scenes/testDungeon.tscn" id="15_1ekqo"]
 [ext_resource type="PackedScene" uid="uid://bbscko7vnk4iw" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorLunar.tscn" id="18_o0ar1"]
+[ext_resource type="PackedScene" uid="uid://q2pmyucxr4qp" path="res://game/player/astros.tscn" id="18_rydj3"]
 [ext_resource type="PackedScene" uid="uid://cvh27v2jqhewc" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorSolar.tscn" id="19_463pv"]
 [ext_resource type="PackedScene" uid="uid://dlgrtnsnxia11" path="res://game/mechanics/DungeonStateSwitch/manager/dungeonStateSwitchManager.tscn" id="21_h8s54"]
 [ext_resource type="PackedScene" uid="uid://yshyhwykopdf" path="res://game/mechanics/DungeonStateSwitch/energy_object/stairs.tscn" id="25_0om4d"]
@@ -225,50 +223,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55375, 0.5, -4.41831)
 [node name="TestDungeon" parent="." instance=ExtResource("15_1ekqo")]
 transform = Transform3D(0.842283, 0, -0.539035, 0, 1, 0, 0.539035, 0, 0.842283, 0, 0.488828, -19.687)
 
-[node name="Astros" type="GridContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Astros"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Astros/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(1280, 358)
-render_target_update_mode = 4
-
-[node name="Luna" parent="Astros/SubViewportContainer/SubViewport" instance=ExtResource("16_463pv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499807, -1.243)
-
-[node name="fpsCount" parent="Astros/SubViewportContainer/SubViewport" instance=ExtResource("17_yp5ar")]
-
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="Astros"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Astros/SubViewportContainer2"]
-handle_input_locally = false
-size = Vector2i(1280, 358)
-render_target_update_mode = 4
-
-[node name="Sol" parent="Astros/SubViewportContainer2/SubViewport" instance=ExtResource("18_h8s54")]
-transform = Transform3D(-0.997965, 0, -0.063766, 0, 1, 0, 0.063766, 0, -0.997965, 0, 0.499413, -7.72066)
-
-[node name="fpsCount" parent="Astros/SubViewportContainer2/SubViewport" instance=ExtResource("17_yp5ar")]
-
-[node name="DebugPanel" parent="Astros/SubViewportContainer2/SubViewport/fpsCount" index="0"]
-offset_left = 1158.0
-offset_top = 15.0
-offset_right = 1267.0
-offset_bottom = 55.0
+[node name="Astros" parent="." instance=ExtResource("18_rydj3")]
 
 [node name="actuator" parent="." instance=ExtResource("18_o0ar1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.044, 1.225, -10.928)
@@ -306,5 +261,3 @@ typeEnergy = 1
 [node name="Wall4" parent="." instance=ExtResource("25_jvslr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4486, 2, -8.69556)
 typeEnergy = 2
-
-[editable path="Astros/SubViewportContainer2/SubViewport/fpsCount"]

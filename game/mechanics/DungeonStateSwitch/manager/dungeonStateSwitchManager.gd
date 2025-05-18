@@ -1,5 +1,7 @@
 extends Node
 
+@export var SignalWaitTime = 2
+
 # Enum para los estados de energía de la mazmorra
 enum EnergyState {EMPTY, LUNAR, SOLAR}
 

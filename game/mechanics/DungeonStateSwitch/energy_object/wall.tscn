@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://iqns65se82k" path="res://game/mechanics/DungeonStateSwitch/energy_object.gd" id="1_8kok7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8kok7"]
-size = Vector3(3, 3, 0.5)
+size = Vector3(5, 5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8kok7"]
-size = Vector3(3, 3, 0.5)
+size = Vector3(5, 5, 0.5)
 
 [node name="Wall" type="StaticBody3D"]
 script = ExtResource("1_8kok7")

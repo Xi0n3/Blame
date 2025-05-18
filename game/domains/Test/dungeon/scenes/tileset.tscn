@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b00xn5mfxxfj"]
-
-[ext_resource type="PackedScene" uid="uid://ccnvqwjg2ck30" path="res://game/domains/Test/dungeon/structures/tileset.glb" id="1_gxy7g"]
-
-[node name="tileset" instance=ExtResource("1_gxy7g")]
