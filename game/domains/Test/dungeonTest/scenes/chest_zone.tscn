@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tacskbkiwcby"]
 
 [ext_resource type="MeshLibrary" uid="uid://j2was1ytc0wj" path="res://game/domains/Test/dungeonTest/structures/tileset.tres" id="1_io1se"]
-[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/Muebles/crate.tscn" id="2_uy2as"]
+[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/furniture/crate.tscn" id="2_uy2as"]
 
 [node name="chest_zone" type="Node3D"]
 

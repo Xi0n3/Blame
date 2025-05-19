@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxhxpa4638blt"
-path.s3tc="res://.godot/imported/barrel_barrel_albedo.png-ab4e1ad1a6d54eab01babddb78e4051e.s3tc.ctex"
+uid="uid://bjo7d35rf3e3a"
+path.s3tc="res://.godot/imported/table_table_albedo.png-02dee993e429a8e08b0590e8577c4bde.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://game/domains/Test/main/Muebles/textures/barrel_barrel_albedo.png"
-dest_files=["res://.godot/imported/barrel_barrel_albedo.png-ab4e1ad1a6d54eab01babddb78e4051e.s3tc.ctex"]
+source_file="res://game/domains/Test/main/furniture/textures/table_table_albedo.png"
+dest_files=["res://.godot/imported/table_table_albedo.png-02dee993e429a8e08b0590e8577c4bde.s3tc.ctex"]
 
 [params]
 

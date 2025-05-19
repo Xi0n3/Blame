@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://ye5q2lb66kgk"]
 
-[ext_resource type="Texture2D" uid="uid://mxserffc7pmq" path="res://game/domains/Test/main/Muebles/textures/chair_chair_albedo.png" id="1_guyb7"]
+[ext_resource type="Texture2D" uid="uid://mxserffc7pmq" path="res://game/domains/Test/main/furniture/textures/chair_chair_albedo.png" id="1_guyb7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fbk5"]
 resource_name = "Material.002"

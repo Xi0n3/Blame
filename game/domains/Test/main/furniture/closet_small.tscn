@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://cax6b3jq5a4bh"]
 
-[ext_resource type="Texture2D" uid="uid://bqlsdvayoylrr" path="res://game/domains/Test/main/Muebles/textures/closet_small_closet_albedo.png" id="1_pvuls"]
+[ext_resource type="Texture2D" uid="uid://bqlsdvayoylrr" path="res://game/domains/Test/main/furniture/textures/closet_small_closet_albedo.png" id="1_pvuls"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhyq4"]
 resource_name = "closet"

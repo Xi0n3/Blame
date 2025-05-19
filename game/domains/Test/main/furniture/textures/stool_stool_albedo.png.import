@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c622qnwki55r6"
-path.s3tc="res://.godot/imported/stool_stool_albedo.png-679b18d7bf6f0287c3d42e0b6afb7ccf.s3tc.ctex"
+path.s3tc="res://.godot/imported/stool_stool_albedo.png-d19288d63f2ab2a59032ebe2c9398cf9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://game/domains/Test/main/Muebles/textures/stool_stool_albedo.png"
-dest_files=["res://.godot/imported/stool_stool_albedo.png-679b18d7bf6f0287c3d42e0b6afb7ccf.s3tc.ctex"]
+source_file="res://game/domains/Test/main/furniture/textures/stool_stool_albedo.png"
+dest_files=["res://.godot/imported/stool_stool_albedo.png-d19288d63f2ab2a59032ebe2c9398cf9.s3tc.ctex"]
 
 [params]
 

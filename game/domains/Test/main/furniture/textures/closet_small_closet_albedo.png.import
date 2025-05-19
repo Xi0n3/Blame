@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mxserffc7pmq"
-path.s3tc="res://.godot/imported/chair_chair_albedo.png-ba550b4a7a481c5ccfe4de735654756a.s3tc.ctex"
+uid="uid://bqlsdvayoylrr"
+path.s3tc="res://.godot/imported/closet_small_closet_albedo.png-8dcf54d4d29529092d58e2b1f684d80e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://game/domains/Test/main/Muebles/textures/chair_chair_albedo.png"
-dest_files=["res://.godot/imported/chair_chair_albedo.png-ba550b4a7a481c5ccfe4de735654756a.s3tc.ctex"]
+source_file="res://game/domains/Test/main/furniture/textures/closet_small_closet_albedo.png"
+dest_files=["res://.godot/imported/closet_small_closet_albedo.png-8dcf54d4d29529092d58e2b1f684d80e.s3tc.ctex"]
 
 [params]
 

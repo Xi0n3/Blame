@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://b3u2gktgvf770"]
 
-[ext_resource type="Texture2D" uid="uid://c1ggndjctnqqr" path="res://game/domains/Test/main/Muebles/textures/bench_bench_albedo.png" id="1_7hkvs"]
+[ext_resource type="Texture2D" uid="uid://bddrnxkurkxye" path="res://game/domains/Test/main/furniture/textures/bench_bench_albedo.png" id="1_7hkvs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51rh4"]
 resource_name = "Material.003"

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1kshrbwhaowu"
-path.s3tc="res://.godot/imported/closet_large_closet_albedo.png-5222f2ba51cb300670ae8140ba4cf587.s3tc.ctex"
+uid="uid://bapdi2k8fgis1"
+path.s3tc="res://.godot/imported/closet_medium_closet_albedo.png-96be75646efb9ec67948c98abbe9ba87.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://game/domains/Test/main/Muebles/textures/closet_large_closet_albedo.png"
-dest_files=["res://.godot/imported/closet_large_closet_albedo.png-5222f2ba51cb300670ae8140ba4cf587.s3tc.ctex"]
+source_file="res://game/domains/Test/main/furniture/textures/closet_medium_closet_albedo.png"
+dest_files=["res://.godot/imported/closet_medium_closet_albedo.png-96be75646efb9ec67948c98abbe9ba87.s3tc.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://b5yjlql6ytp2l"]
 
-[ext_resource type="Texture2D" uid="uid://cx3wd5mrtlifn" path="res://game/domains/Test/main/Muebles/textures/tall_stool_tall_stool_albedo.png" id="1_5om8q"]
+[ext_resource type="Texture2D" uid="uid://cx3wd5mrtlifn" path="res://game/domains/Test/main/furniture/textures/tall_stool_tall_stool_albedo.png" id="1_5om8q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_woaet"]
 resource_name = "tall_stool_texture"

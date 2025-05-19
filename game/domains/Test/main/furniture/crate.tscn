@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://bfa7d83lfrspr"]
 
-[ext_resource type="Texture2D" uid="uid://bafub8xe6vtxp" path="res://game/domains/Test/main/Muebles/textures/crate_crate_albedo.png" id="1_opvpi"]
+[ext_resource type="Texture2D" uid="uid://bafub8xe6vtxp" path="res://game/domains/Test/main/furniture/textures/crate_crate_albedo.png" id="1_opvpi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtlue"]
 resource_name = "Material"

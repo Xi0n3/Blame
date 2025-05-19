@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dc0544vyo5a02"]
 
-[ext_resource type="Texture2D" uid="uid://bjo7d35rf3e3a" path="res://game/domains/Test/main/Muebles/textures/table_table_albedo.png" id="1_m1sen"]
+[ext_resource type="Texture2D" uid="uid://bjo7d35rf3e3a" path="res://game/domains/Test/main/furniture/textures/table_table_albedo.png" id="1_m1sen"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ik2pw"]
 resource_name = "Material.004"

@@ -1,21 +1,21 @@
-[gd_scene load_steps=34 format=3 uid="uid://bssm8p8a5megh"]
+[gd_scene load_steps=33 format=3 uid="uid://bssm8p8a5megh"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Dark/texture_05.png" id="1_8ci3x"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Orange/texture_09.png" id="2_i10sp"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Purple/texture_09.png" id="3_o0ar1"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Green/texture_09.png" id="4_463pv"]
-[ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://game/domains/Test/main/Muebles/closet_medium.tscn" id="5_h8s54"]
+[ext_resource type="PackedScene" uid="uid://dfgooawkkwepr" path="res://game/domains/Test/main/furniture/closet_medium.tscn" id="5_h8s54"]
 [ext_resource type="Texture2D" uid="uid://r4uqvwic7khq" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Purple/texture_06.png" id="5_ig2si"]
-[ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://game/domains/Test/main/Muebles/closet_small.tscn" id="6_oh1vt"]
+[ext_resource type="PackedScene" uid="uid://cax6b3jq5a4bh" path="res://game/domains/Test/main/furniture/closet_small.tscn" id="6_oh1vt"]
 [ext_resource type="Texture2D" uid="uid://chfn1iyg8h86w" path="res://game/domains/Test/main/prototipe_structure/textures/grids/Light/texture_09.png" id="6_rydj3"]
-[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/Muebles/crate.tscn" id="7_ig2si"]
-[ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/Muebles/tall_stool.tscn" id="8_rydj3"]
-[ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/Muebles/chair.tscn" id="9_jvslr"]
-[ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/Muebles/stool.tscn" id="10_0om4d"]
-[ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/Muebles/table.tscn" id="11_c8x31"]
-[ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/Muebles/barrel.tscn" id="12_r5heq"]
-[ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://game/domains/Test/main/Muebles/bench.tscn" id="13_oe7qi"]
-[ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://game/domains/Test/main/Muebles/closet_large.tscn" id="14_4qyl6"]
+[ext_resource type="PackedScene" uid="uid://bfa7d83lfrspr" path="res://game/domains/Test/main/furniture/crate.tscn" id="7_ig2si"]
+[ext_resource type="PackedScene" uid="uid://b5yjlql6ytp2l" path="res://game/domains/Test/main/furniture/tall_stool.tscn" id="8_rydj3"]
+[ext_resource type="PackedScene" uid="uid://ye5q2lb66kgk" path="res://game/domains/Test/main/furniture/chair.tscn" id="9_jvslr"]
+[ext_resource type="PackedScene" uid="uid://drsh0n5s320xc" path="res://game/domains/Test/main/furniture/stool.tscn" id="10_0om4d"]
+[ext_resource type="PackedScene" uid="uid://dc0544vyo5a02" path="res://game/domains/Test/main/furniture/table.tscn" id="11_c8x31"]
+[ext_resource type="PackedScene" uid="uid://615o4xmwcner" path="res://game/domains/Test/main/furniture/barrel.tscn" id="12_r5heq"]
+[ext_resource type="PackedScene" uid="uid://b3u2gktgvf770" path="res://game/domains/Test/main/furniture/bench.tscn" id="13_oe7qi"]
+[ext_resource type="PackedScene" uid="uid://dyupth3080mo5" path="res://game/domains/Test/main/furniture/closet_large.tscn" id="14_4qyl6"]
 [ext_resource type="PackedScene" uid="uid://bb8yybunl61et" path="res://game/domains/Test/dungeonTest/scenes/testDungeon.tscn" id="15_1ekqo"]
 [ext_resource type="PackedScene" uid="uid://bbscko7vnk4iw" path="res://game/mechanics/DungeonStateSwitch/actuator/actuatorLunar.tscn" id="18_o0ar1"]
 [ext_resource type="PackedScene" uid="uid://q2pmyucxr4qp" path="res://game/player/astros.tscn" id="18_rydj3"]
@@ -25,15 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bikloun7pmer8" path="res://game/mechanics/DungeonStateSwitch/energy_object/wall.tscn" id="25_jvslr"]
 [ext_resource type="PackedScene" uid="uid://dbtofxeb3mx7y" path="res://game/mechanics/DungeonStateSwitch/energy_object/block.tscn" id="26_c8x31"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wta4"]
-sky_top_color = Color(0.0941176, 0.121569, 0.152941, 1)
-sky_horizon_color = Color(0.556863, 0.559804, 0.641176, 1)
-sky_energy_multiplier = 0.8
-ground_bottom_color = Color(0.133333, 0.117647, 0.411765, 1)
-ground_horizon_color = Color(0.556863, 0.559804, 0.641176, 1)
-
 [sub_resource type="Sky" id="Sky_xwusb"]
-sky_material = SubResource("ProceduralSkyMaterial_7wta4")
 
 [sub_resource type="Environment" id="Environment_kfh3j"]
 background_mode = 2

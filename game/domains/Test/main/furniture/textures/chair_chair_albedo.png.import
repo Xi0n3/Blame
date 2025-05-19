@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bddrnxkurkxye"
-path.s3tc="res://.godot/imported/bench_bench_albedo.png-7f2382a072f66027f9f3c4bf5a3a41f1.s3tc.ctex"
+uid="uid://mxserffc7pmq"
+path.s3tc="res://.godot/imported/chair_chair_albedo.png-2ea83a348384065cd435b1b8b61b0ffe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://game/domains/Test/main/Muebles/textures/bench_bench_albedo.png"
-dest_files=["res://.godot/imported/bench_bench_albedo.png-7f2382a072f66027f9f3c4bf5a3a41f1.s3tc.ctex"]
+source_file="res://game/domains/Test/main/furniture/textures/chair_chair_albedo.png"
+dest_files=["res://.godot/imported/chair_chair_albedo.png-2ea83a348384065cd435b1b8b61b0ffe.s3tc.ctex"]
 
 [params]
 

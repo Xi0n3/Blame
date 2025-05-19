@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://drsh0n5s320xc"]
 
-[ext_resource type="Texture2D" uid="uid://c622qnwki55r6" path="res://game/domains/Test/main/Muebles/textures/stool_stool_albedo.png" id="1_svghi"]
+[ext_resource type="Texture2D" uid="uid://c622qnwki55r6" path="res://game/domains/Test/main/furniture/textures/stool_stool_albedo.png" id="1_svghi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p0byh"]
 friction = 0.11

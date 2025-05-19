@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://615o4xmwcner"]
 
-[ext_resource type="Texture2D" uid="uid://dxhxpa4638blt" path="res://game/domains/Test/main/Muebles/textures/barrel_barrel_albedo.png" id="1_ayqpm"]
+[ext_resource type="Texture2D" uid="uid://dxhxpa4638blt" path="res://game/domains/Test/main/furniture/textures/barrel_barrel_albedo.png" id="1_ayqpm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2r5cc"]
 resource_name = "Material"
