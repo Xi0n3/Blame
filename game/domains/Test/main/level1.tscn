@@ -31,6 +31,7 @@ albedo_texture = ExtResource("8_0ovtd")
 [node name="Level1" type="Node3D"]
 
 [node name="DungeonStateSwitchManager" parent="." instance=ExtResource("1_kq4ao")]
+SignalWaitTime = 4
 
 [node name="1erPiso" type="GridMap" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.25, 0)
@@ -65,6 +66,12 @@ size = Vector2i(1280, 358)
 
 [node name="Sol" parent="Astros/SubViewportContainer2/SubViewport" index="0"]
 transform = Transform3D(-0.0509067, 0, -0.998703, 0, 1, 0, 0.998703, 0, -0.0509067, -24, 0.3, -2.34)
+
+[node name="DebugPanel" parent="Astros/SubViewportContainer2/SubViewport/fpsCount" index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 20.0
+offset_bottom = 20.0
 
 [node name="mecanismos" type="Node3D" parent="."]
 
@@ -184,7 +191,7 @@ transform = Transform3D(-0.00851709, 0, -0.999964, 0, 1, 0, 0.999964, 0, -0.0085
 
 [node name="Wall16" parent="mecanismos" instance=ExtResource("6_epsyy")]
 transform = Transform3D(-0.00851709, 0, -0.999964, 0, 1, 0, 0.999964, 0, -0.00851709, -8.3945, 6.50122, -2.2254)
-typeEnergy = 2
+typeEnergy = 1
 
 [node name="Wall17" parent="mecanismos" instance=ExtResource("6_epsyy")]
 transform = Transform3D(-0.00851709, 0, -0.999964, 0, 1, 0, 0.999964, 0, -0.00851709, 13.6055, 6.50122, -2.2254)
@@ -761,7 +768,6 @@ transform = Transform3D(1, 0, 0, 0, 0.757884, 0.652389, 0, -0.652389, 0.757884, 
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." node_paths=PackedStringArray("world_environment")]
-environment = ExtResource("19_bgmlc")
 script = ExtResource("20_vuffk")
 world_environment = NodePath(".")
 empty_environment = ExtResource("19_bgmlc")
